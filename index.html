@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frontend Learning App</title>
+    <style>
+        :root {
+            --primary: #2ecc71;
+            --secondary: #3498db;
+            --background: #f8f9fa;
+            --text: #2c3e50;
+            --card-bg: #ffffff;
+            --border: #dee2e6;
+        }
+
+        .dark-theme {
+            --background: #1a1a1a;
+            --text: #e9ecef;
+            --card-bg: #2d2d2d;
+            --border: #495057;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', sans-serif;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        body {
+            background: var(--background);
+            color: var(--text);
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Навигация */
+        .navbar {
+            background: var(--card-bg);
+            padding: 1rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            position: relative;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1rem;
+            list-style: none;
+            overflow-x: auto;
+            scrollbar-width: thin;
+            scrollbar-color: var(--primary) var(--background);
+        }
+
+        .nav-links::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        .nav-links::-webkit-scrollbar-thumb {
+            background: var(--primary);
+            border-radius: 4px;
+        }
+
+        .nav-links::-webkit-scrollbar-track {
+            background: var(--background);
+        }
+
+        .nav-link {
+            cursor: pointer;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            white-space: nowrap;
+        }
+
+        .nav-link.active {
+            background: var(--primary);
+            color: white;
+        }
+
+        .next-lesson-btn {
+            background: var(--secondary);
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1rem;
+            margin-top: 1rem;
+            display: block;
+            width: 100%;
+            text-align: center;
+        }
+
+        .next-lesson-btn:hover {
+            opacity: 0.9;
+        }
+
+        /* Урок */
+        .lesson {
+            display: none;
+            margin-bottom: 3rem;
+        }
+
+        .lesson.active {
+            display: block;
+        }
+
+        .section {
+            background: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: 10px;
+            border: 1px solid var(--border);
+            margin-bottom: 1.5rem;
+        }
+
+        .code-example {
+            background: var(--background);
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            font-family: 'Courier New', monospace;
+            white-space: pre-wrap;
+        }
+
+        .quiz-question {
+            margin-bottom: 1rem;
+        }
+
+        .quiz-question label {
+            display: block;
+            margin: 0.5rem 0;
+        }
+
+        .practice-area textarea {
+            width: 100%;
+            height: 150px;
+            padding: 1rem;
+            border: 2px solid var(--primary);
+            border-radius: 8px;
+            background: var(--background);
+            color: var(--text);
+            margin: 1rem 0;
+        }
+
+        button {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        button:hover {
+            opacity: 0.9;
+        }
+
+        /* Темная тема */
+        .theme-toggle {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            padding: 1rem;
+            border-radius: 50%;
+            background: var(--primary);
+            color: white;
+            cursor: pointer;
+        }
+
+        .header {
+            text-align: center;
+            padding: 40px 0;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            border-radius: 15px;
+            margin-bottom: 30px;
+        }
+
+        /* Мобильная версия */
+        @media (max-width: 768px) {
+            .nav-links {
+                gap: 0.5rem;
+            }
+
+            .nav-link {
+                font-size: 0.9rem;
+            }
+
+            .theme-toggle {
+                bottom: 1rem;
+                right: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Навигация -->
+        <nav class="navbar">
+            <ul class="nav-links">
+                <li class="nav-link active" onclick="showLesson(event, 1)">Урок 1</li>
+                <li class="nav-link" onclick="showLesson(event, 2)">Урок 2</li>
+                <li class="nav-link" onclick="showLesson(event, 3)">Урок 3</li>
+                <li class="nav-link" onclick="showLesson(event, 4)">Урок 4</li>
+                <li class="nav-link" onclick="showLesson(event, 5)">Урок 5</li>
+                <li class="nav-link" onclick="showLesson(event, 6)">Урок 6</li>
+                <li class="nav-link" onclick="showLesson(event, 7)">Урок 7</li>
+                <li class="nav-link" onclick="showLesson(event, 8)">Урок 8</li>
+                <li class="nav-link" onclick="showLesson(event, 9)">Урок 9</li>
+                <li class="nav-link" onclick="showLesson(event, 10)">Урок 10</li>
+                <li class="nav-link" onclick="showLesson(event, 11)">Урок 11</li>
+                <li class="nav-link" onclick="showLesson(event, 12)">Урок 12</li>
+                <li class="nav-link" onclick="showLesson(event, 13)">Урок 13</li>
+                <li class="nav-link" onclick="showLesson(event, 14)">Урок 14</li>
+                <li class="nav-link" onclick="showLesson(event, 15)">Урок 15</li>
+                <li class="nav-link" onclick="showLesson(event, 16)">Урок 16</li>
+                <li class="nav-link" onclick="showLesson(event, 17)">Урок 17</li>
+                <li class="nav-link" onclick="showLesson(event, 18)">Урок 18</li>
+                <li class="nav-link" onclick="showLesson(event, 19)">Урок 19</li>
+                <li class="nav-link" onclick="showLesson(event, 20)">Урок 20</li>
+                <li class="nav-link" onclick="showLesson(event, 21)">Практика </li>
+            </ul>
+        </nav>
+        
+        <div class="header">
+            <h1>🚀Frontend Learner</h1>
+            <p>Изучайте Web-разработку в интерактивном формате</p>
+        </div>
+
+        <!-- Урок 1 -->
+        <div class="lesson active" id="lesson-1"><!-- Теория -->
+            <div class="section">
+                <h2>Что такое веб Веб-разработка?</h2>
+                <p>
+                    В самом начале небольшой организационный момент - это простой ознакомительный курс который служит для передачи базовых знаний. <br>
+                    Работать можно в встроенном редакторе но мы рекомендуем скачать программу для разработки и работать в ней.<br>
+                    Хоть практики не обязательны к выполнению но мы рекомендуем также и выполнять их для закреплния материала.<br>
+                    <br>
+                    Веб-разработка — это процесс создания веб-сайтов и веб-приложений, которые работают в интернете. Она включает в себя проектирование, верстку, программирование и настройку функциональности сайта. 
+                    <br>
+                    Веб-разработка делится на два основных направления: фронтенд и бекенд. С ними мы разберемся чуть позже.
+                </p>
+                <br>
+                <h2>Клиент-серверная архитектура</h2>
+                <p>
+                    Клиент-серверная архитектура — это модель взаимодействия между клиентом (например, браузером) и сервером (компьютером, который обрабатывает запросы).<br>
+                    
+                   * Клиент отправляет запросы (например, "покажи главную страницу сайта"). <br>
+                   * Сервер обрабатывает запрос и возвращает ответ (например, HTML-код страницы).<br>
+                </p>
+                <br>
+                <h2>Технологии</h2>
+                <p>
+                    Для создания фронтенда используются три основные технологии:<br>
+                    <br>
+                    * HTML (HyperText Markup Language) — язык разметки, который определяет структуру страницы (заголовки, параграфы, изображения и т.д.).<br>
+                    * CSS (Cascading Style Sheets) — язык стилей, который отвечает за внешний вид страницы (цвета, шрифты, расположение элементов).<br>
+                    * JavaScript — язык программирования, который добавляет интерактивность на страницу (например, анимации, обработка кликов, загрузка данных без перезагрузки страницы).<br>
+                </p>
+                <br>
+                <h2>Devtools</h2>
+                <p>
+                    Для работы фронтенд-разработчику необходимы следующие инструменты:<br>
+                    <br>
+                    
+                    * Браузеры (Google Chrome, Firefox, Safari и др.) — программы для просмотра и тестирования веб-страниц.<br>
+                    * Текстовые редакторы (<a href = "https://code.visualstudio.com">VS Code,</a> Sublime Text, Atom) — программы для написания и редактирования кода.<br>
+                    * DevTools (Инструменты разработчика) — встроенные в браузеры инструменты для отладки кода, анализа производительности и тестирования страниц.<br>
+                </p>
+            </div>
+
+            <!-- Пример -->
+
+<!-- Квиз -->
+            <div class="section">
+                <h2>Квиз</h2>
+                <br>
+                <div class="quiz-question">
+                    <p>Что делает сервер в клиент-серверной архитектуре?</p>
+                    <label><input type="radio" name="q1"> Отображает страницу в браузере.</label>
+                    <label><input type="radio" name="q1" correct>Обрабатывает запросы и возвращает данные клиенту.</label>
+                    <label><input type="radio" name="q1"> Создает HTML-код для страницы.</label>
+                </div>
+                <div class="quiz-question">
+                    <p>Какую технологию используют для стилизации веб-страниц?</p>
+                    <label><input type="radio" name="q2"> HTML</label>
+                    <label><input type="radio" name="q2" correct>CSS</label>
+                    <label><input type="radio" name="q2"> JavaScript</label>
+                </div>
+                <div class="quiz-question">
+                    <p>Какой инструмент помогает разработчику отлаживать код в браузере?</p>
+                    <label><input type="radio" name="q3">Текстовый редактор</label>
+                    <label><input type="radio" name="q3" correct>DevTools</label>
+                    <label><input type="radio" name="q3">База данных</label>
+                </div>
+                <div class="quiz-question">
+                    <p>Какой язык программирования добавляет интерактивность на страницу?</p>
+                    <label><input type="radio" name="q4"> HTML</label>
+                    <label><input type="radio" name="q4" >CSS</label>
+                    <label><input type="radio" name="q4" correct>JavaScript</label>
+                </div>
+                <!-- Добавьте еще 4 вопроса -->
+                <button onclick="checkQuiz(this)">Проверить ответы</button>
+            </div>
+        <!-- Итог -->
+            <div class="section">
+                <h2>Итог</h2>
+                <p>
+                * Веб-разработка — это создание сайтов и веб-приложений, включающее фронтенд (видимую часть) и бэкенд (логику и данные).<br>
+                *  Клиент-серверная архитектура — это взаимодействие между клиентом (браузером) и сервером, где фронтенд отвечает за отображение, а бэкенд — за обработку данных.<br>
+                * Основные технологии фронтенда — HTML (структура), CSS (стили) и JavaScript (интерактивность).<br>
+                * Инструменты разработчика — браузеры, текстовые редакторы и DevTools — помогают создавать, тестировать и отлаживать веб-страницы.<br>
+                * Теперь вы знаете основы фронтенд-разработки и готовы двигаться дальше! 🚀<br>
+                </p>
+            </div>
+            </div>
+
+            
+            
+            <!-- Урок 2 -->
+        <div class="lesson active" id="lesson-2"><!-- Теория -->
+            <div class="section">
+                <h2>Как работает интернет?</h2>
+                <p>
+                    Интернет — это глобальная сеть, состоящая из миллионов компьютеров, серверов и устройств, соединенных между собой. Вот как это работает:<br>
+                    <br>
+                    1. Когда вы вводите адрес сайта в браузере, ваш компьютер (клиент) отправляет запрос на сервер через интернет.<br>
+                    2. Сервер обрабатывает запрос и возвращает данные (например, HTML, CSS, JavaScript), которые браузер отображает как веб-страницу.<br>
+                    3. Всё это происходит благодаря протоколам, таким как HTTP/HTTPS, которые определяют правила передачи данных.<br>
+                    <br>
+                </p>
+                <br>
+                <h2>Что такое домен и хостинг?</h2>
+                <p>
+                     1. Домен — это уникальный адрес сайта в интернете (например, google.com). Он помогает пользователям легко находить сайт без необходимости запоминать сложные IP-адреса серверов.<br>
+                     2. Хостинг — это услуга, которая предоставляет место на сервере для хранения файлов сайта (HTML, CSS, изображения и т.д.). Без хостинга сайт не сможет работать в интернете.
+                </p>
+                <br>
+                <h2>Что такое фронтенд и бэкенд? В чем разница?</h2>
+                <p>
+                    * Фронтенд (frontend) — это всё, что пользователь видит и с чем взаимодействует в браузере. Это HTML, CSS и JavaScript, которые отвечают за внешний вид и интерактивность сайта.<br>
+                    * Бэкенд (backend) — это "внутренняя" часть сайта, которая работает на сервере. Он отвечает за обработку данных, работу с базами данных, авторизацию пользователей и другую логику.<br>
+                    * Разница: фронтенд — это видимая часть, а бэкенд — невидимая, но критически важная для работы сайта. </p>
+                <br>
+                <h2> Основные этапы создания сайта</h2>
+                <p>
+                    1. Проектирование: определение целей сайта, создание макетов и прототипов.<br>
+                    2. Дизайн: разработка визуального стиля (цвета, шрифты, изображения).<br>
+                    3. Верстка: создание HTML-структуры и CSS-стилей.<br>
+                    4. Программирование: добавление интерактивности с помощью JavaScript и разработка бэкенда.<br>
+                    5. Тестирование: проверка работы сайта на разных устройствах и браузерах.<br>
+                    6. Размещение на хостинге: загрузка файлов сайта на сервер и настройка домена.<br>
+                    7. Поддержка и обновления: регулярное обновление контента и исправление ошибок. </p>
+            </div>
+
+            <!-- Пример -->
+
+<!-- Квиз -->
+            <div class="section">
+                <h2>Квиз</h2>
+                <br>
+                <div class="quiz-question">
+                    <p>Что такое домен?</p>
+                    <label><input type="radio" name="q1">Место для хранения файлов сайта.</label>
+                    <label><input type="radio" name="q1" correct>Уникальный адрес сайта в интернете.</label>
+                    <label><input type="radio" name="q1">Язык программирования для создания сайтов.</label>
+                </div>
+                <div class="quiz-question">
+                    <p>Что делает хостинг?</p>
+                    <label><input type="radio" name="q2"> Создает дизайн сайта.</label>
+                    <label><input type="radio" name="q2" correct> Хранит файлы сайта на сервере.</label>
+                    <label><input type="radio" name="q2">Отображает сайт в браузере.</label>
+                </div>
+                <div class="quiz-question">
+                    <p>Что относится к фронтенду?</p>
+                    <label><input type="radio" name="q3"> База данных и серверная логика.</label>
+                    <label><input type="radio" name="q3" correct> HTML, CSS и JavaScript.</label>
+                    <label><input type="radio" name="q3">База данных</label>
+                </div>
+                <div class="quiz-question">
+                    <p>Какой этап создания сайта включает создание макетов?</p>
+                    <label><input type="radio" name="q4">Дизайн</label>
+                    <label><input type="radio" name="q4"correct >Проектирование</label>
+                    <label><input type="radio" name="q4" >Верстка</label>
+                </div>
+                <div class="quiz-question">
+                    <p>Что такое бэкенд?</p>
+                    <label><input type="radio" name="q4">Внешний вид сайта.</label>
+                    <label><input type="radio" name="q4"correct >Логика и обработка данных на сервере.</label>
+                    <label><input type="radio" name="q4" >Инструменты для тестирования сайта.</label>
+                </div>
+                <!-- Добавьте еще 4 вопроса -->
+                <button onclick="checkQuiz(this)">Проверить ответы</button>
+            </div>
+            <div class="section">
+                <h2>Мини-повторение</h2>
+                <p>
+                    * Веб-разработка — это процесс создания сайтов и веб-приложений, включающий фронтенд (видимую часть) и бэкенд (логику и данные).<br>
+                    * Клиент-серверная архитектура — это взаимодействие между клиентом (браузером) и сервером, где фронтенд отвечает за отображение, а бэкенд — за обработку данных.<br>
+                    * Основные технологии фронтенда:<br>
+                       1. HTML — для создания структуры страницы.<br>
+                       2. CSS — для стилизации и оформления.<br>
+                       3. JavaScript — для добавления интерактивности.<br>
+                    * Инструменты разработчика:<br>
+                    * Браузеры (Google Chrome, Firefox).<br>
+                    * Текстовые редакторы (VS Code, Sublime Text).<br>
+                    * DevTools — для отладки и тестирования.<br>
+                </p>
+            </div>
+        <!-- Итог -->
+            <div class="section">
+                <h2>Итог</h2>
+                <p>
+                   *  Интернет работает благодаря взаимодействию клиентов и серверов через протоколы (HTTP/HTTPS).<br>
+                   * Домен — это адрес сайта, а хостинг — место для хранения его файлов.<br>
+                   * Фронтенд — видимая часть сайта, бэкенд — невидимая, но важная для логики и данных.<br>
+                   * Создание сайта включает этапы: проектирование, дизайн, верстку, программирование, тестирование и размещение.<br>
+                   * Теперь вы понимаете, как устроен интернет и процесс создания сайтов! 🌐<br></p>
+            </div>
+            </div>
+
+            
+            
+            
+            
+            
+            
+            <div class="lesson active" id="lesson-3"><!-- Теория -->
+                <div class="section">
+                    <h2>Теория: Основы HTML</h2>
+                    <p>
+                        HTML (HyperText Markup Language) — это язык разметки, используемый для создания веб-страниц. 
+                        Он состоит из тегов, которые определяют структуру и содержание страницы. Основные элементы:
+                    </p>
+                    <ul>
+                        <li><code>&lt;html&gt;</code> — корневой элемент документа.</li>
+                        <li><code>&lt;head&gt;</code> — содержит метаинформацию (заголовок, стили, скрипты).</li>
+                        <li><code>&lt;body&gt;</code> — основное содержимое страницы.</li>
+                        <li><code>&lt;h1&gt;-&lt;h6&gt;</code> — заголовки разного уровня.</li>
+                        <li><code>&lt;p&gt;</code> — параграф текста.</li>
+                    </ul>
+                </div>
+    
+                <!-- Пример -->
+                <div class="section">
+                    <h2>Пример</h2>
+                    <div class="code-example">
+                &lt;!DOCTYPE html>
+                &lt;html>
+                &lt;head>
+                &lt;title>Моя страница&lt;/title>
+                &lt;/head>
+                &lt;body>
+                &lt;h1>Привет, мир!&lt;/h1>
+                &lt;p>Это моя первая веб-страница.&lt;/p>
+                &lt;/body>
+                &lt;/html>
+                    </div>
+                    <button onclick="runExample(this)">Запустить пример</button>
+                    <div class="preview-section" id="example-preview-1"></div>
+                </div>
+    
+    <!-- Квиз -->
+                <div class="section">
+                    <h2>Квиз</h2>
+                    <div class="quiz-question">
+                        <p>1. Какой тег используется для основного заголовка?</p>
+                        <label><input type="radio" name="q1"> &lt;head&gt;</label>
+                        <label><input type="radio" name="q1" correct> &lt;h1&gt;</label>
+                        <label><input type="radio" name="q1"> &lt;title&gt;</label>
+                    </div>
+                    <!-- Добавьте еще 4 вопроса -->
+                    <button onclick="checkQuiz(this)">Проверить ответы</button>
+                </div>
+    
+                <!-- Практика -->
+                <div class="section">
+                    <h2>Практика</h2>
+                    <div class="practice-area">
+                        <textarea placeholder="Создайте страницу с заголовком и параграфом..."></textarea>
+                        <button onclick="runPractice(this)">Запустить код</button>
+                        <div class="preview-section" id="practice-preview-1"></div>
+                    </div>
+                </div>
+    
+    <!-- Мини-повторение -->
+                <div class="section">
+                    <h2>Мини-повторение</h2>
+                    <p>
+                        * Веб-разработка — это процесс создания сайтов и веб-приложений, включающий фронтенд (видимую часть) и бэкенд (логику и данные).<br>
+                        * Клиент-серверная архитектура — это взаимодействие между клиентом (браузером) и сервером, где фронтенд отвечает за отображение, а бэкенд — за обработку данных.<br>
+                        * Основные технологии фронтенда:<br>
+                           1. HTML — для создания структуры страницы.<br>
+                           2. CSS — для стилизации и оформления.<br>
+                           3. JavaScript — для добавления интерактивности.<br>
+                        * Инструменты разработчика:<br>
+                        * Браузеры (Google Chrome, Firefox).<br>
+                        * Текстовые редакторы (VS Code, Sublime Text).<br>
+                        * DevTools — для отладки и тестирования.<br>
+                    </p>
+                </div>
+    
+                <!-- Итог -->
+                <div class="section">
+                    <h2>Итог</h2>
+                    <p>
+                        Сегодня вы изучили основы HTML: структуру документа, основные теги и их назначение. 
+                        Попрактиковались в создании простой веб-страницы. В следующем уроке мы рассмотрим ссылки и изображения.
+                    </p>
+                </div>
+                </div>
+
+                <button class="next-lesson-btn" onclick="nextLesson()">Следующий урок</button>
+<!-- Переключатель темы -->
+<button class="theme-toggle" onclick="toggleTheme()">🌓</button>
+</div>
+
+<script>
+// Навигация
+
+function nextLesson() {
+            const activeLesson = document.querySelector('.lesson.active');
+            const nextLesson = activeLesson.nextElementSibling;
+
+            if (nextLesson && nextLesson.classList.contains('lesson')) {
+                const lessonNumber = nextLesson.id.split('-')[1];
+                const navLink = document.querySelector(`.nav-link[onclick*="${lessonNumber}"]`);
+                showLesson({ currentTarget: navLink }, lessonNumber);
+            }
+        }
+function showLesson(event, lessonNumber) {
+const navLinks = document.querySelectorAll('.nav-link');
+const lessons = document.querySelectorAll('.lesson');
+
+navLinks.forEach(link => link.classList.remove('active'));
+event.currentTarget.classList.add('active');
+
+lessons.forEach(lesson => lesson.classList.remove('active'));
+document.getElementById(`lesson-${lessonNumber}`).classList.add('active');
+}
+function checkQuiz(btn) {
+    const quizSection = btn.closest('.section');
+    const questions = quizSection.querySelectorAll('.quiz-question');
+
+    questions.forEach(question => {
+        const inputs = question.querySelectorAll('input[type="radio"]');
+        let isCorrect = false;
+
+        inputs.forEach(input => {
+            if (input.checked && input.hasAttribute('correct')) {
+                isCorrect = true;
+                input.parentElement.style.color = 'green'; // Правильный ответ
+            } else if (input.checked && !input.hasAttribute('correct')) {
+                input.parentElement.style.color = 'red'; // Неправильный ответ
+            }
+        });
+
+        if (!isCorrect) {
+            inputs.forEach(input => {
+                if (input.hasAttribute('correct')) {
+                    input.parentElement.style.color = 'green'; // Показываем правильный ответ, если ни один не выбран
+                }
+            });
+        }
+    });
+}
+// Запуск примера
+function runExample(btn) {
+const code = btn.previousElementSibling.textContent;
+            const lessonNumber = btn.closest('.lesson').id.split('-')[1];
+            const preview = document.getElementById(`example-preview-${lessonNumber}`);
+            preview.innerHTML = code;
+        }
+
+        // Запуск практики
+        function runPractice(btn) {
+            const code = btn.previousElementSibling.value;
+            const lessonNumber = btn.closest('.lesson').id.split('-')[1];
+            const preview = document.getElementById(`practice-preview-${lessonNumber}`);
+            preview.innerHTML = code;
+        }
+
+        // Переключение темы
+        function toggleTheme() {
+            document.body.classList.toggle('dark-theme');
+            localStorage.setItem('theme', document.body.classList.contains('dark-theme') ? 'dark' : 'light');
+        }
+
+        // Инициализация темы
+        function initTheme() {
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            if (savedTheme === 'dark') document.body.classList.add('dark-theme');
+        }
+
+        // Загрузка
+        window.onload = () => {
+            initTheme();
+        }
+    </script>
+</body>
+</html>
