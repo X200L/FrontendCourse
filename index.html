@@ -218,15 +218,19 @@
                 <li class="nav-link" onclick="showLesson(event, 10)">Урок 10</li>
                 <li class="nav-link" onclick="showLesson(event, 11)">Урок 11</li>
                 <li class="nav-link" onclick="showLesson(event, 12)">Урок 12</li>
-                <li class="nav-link" onclick="showLesson(event, 13)">Урок 13</li>
-                <li class="nav-link" onclick="showLesson(event, 14)">Урок 14</li>
+                <li class="nav-link" onclick="showLesson(event, 13)">Практика/Создание портфолио</li>
+                <li class="nav-link" onclick="showLesson(event, 14)">Введение в CSS/Урок 14</li>
                 <li class="nav-link" onclick="showLesson(event, 15)">Урок 15</li>
                 <li class="nav-link" onclick="showLesson(event, 16)">Урок 16</li>
-                <li class="nav-link" onclick="showLesson(event, 17)">Основы CSS</li>
+                <li class="nav-link" onclick="showLesson(event, 17)">Урок 17</li>
                 <li class="nav-link" onclick="showLesson(event, 18)">Урок 18</li>
                 <li class="nav-link" onclick="showLesson(event, 19)">Урок 19</li>
                 <li class="nav-link" onclick="showLesson(event, 20)">Урок 20</li>
-                <li class="nav-link" onclick="showLesson(event, 21)">Практика </li>
+                <li class="nav-link" onclick="showLesson(event, 21)">Урок 21</li>
+                <li class="nav-link" onclick="showLesson(event, 22)">Урок 22</li>
+                <li class="nav-link" onclick="showLesson(event, 23)">Урок 23</li>
+                <li class="nav-link" onclick="showLesson(event, 24)">Практика </li>
+                <li class="nav-link" onclick="showLesson(event, 25)">Заключение </li>
             </ul>
         </nav>
         
@@ -922,6 +926,1297 @@
                     </p>
                 </div>
             </div>
+            
+            
+            <div class="lesson active" id="lesson-6">
+                <!-- Теория -->
+                <div class="section">
+                    <h2>Теория: Ссылки и изображения в HTML</h2>
+                    <p>
+                        Ссылки и изображения — это важные элементы веб-страниц, которые делают контент интерактивным и визуально привлекательным. В этом уроке мы разберем, как добавлять гиперссылки и изображения, а также их основные атрибуты.
+                    </p>
+            
+                    <h2>Гиперссылки</h2>
+                    <p>
+                        Гиперссылки создаются с помощью тега <code>&lt;a&gt;</code>. Основной атрибут ссылки — <code>href</code>, который указывает URL-адрес или путь к ресурсу, на который ведет ссылка.<br>
+                        <br>
+                        Пример:
+                        <pre>
+            &lt;a href="https://example.com"&gt;Перейти на сайт&lt;/a&gt;
+                        </pre>
+                        Результат:
+                        <a href="https://example.com">Перейти на сайт</a>
+                    </p>
+                    <p>
+                        Ссылки могут вести на внешние сайты, внутренние страницы, якоря на странице или даже вызывать действия, например, отправку электронной почты.<br>
+                        <br>
+                        Пример ссылки на почту:
+                        <pre>
+            &lt;a href="mailto:example@example.com"&gt;Написать письмо&lt;/a&gt;
+                        </pre>
+                        Результат:
+                        <a href="mailto:example@example.com">Написать письмо</a>
+                    </p>
+            
+                    <h2>Изображения</h2>
+                    <p>
+                        Изображения добавляются с помощью тега <code>&lt;img&gt;</code>. Основные атрибуты:<br>
+                        - <code>src</code> — путь к изображению.<br>
+                        - <code>alt</code> — альтернативный текст, который отображается, если изображение не загрузилось.<br>
+                        - <code>width</code> и <code>height</code> — ширина и высота изображения (в пикселях или процентах).<br>
+                        <br>
+                        Пример:
+                        <pre>
+            &lt;img src="image.jpg" alt="Описание изображения" width="200"&gt;
+                        </pre>
+                        Результат:
+                        <img src="https://via.placeholder.com/200" alt="Пример изображения" width="200">
+                    </p>
+            
+                    <h2>Атрибуты ссылок и изображений</h2>
+                    <p>
+                        У ссылок и изображений есть дополнительные атрибуты, которые делают их более функциональными:<br>
+                        <br>
+                        - <code>target</code> (для ссылок) — определяет, где открыть ссылку. Например, <code>target="_blank"</code> открывает ссылку в новой вкладке.<br>
+                        - <code>title</code> (для ссылок и изображений) — всплывающая подсказка, которая появляется при наведении.<br>
+                        - <code>loading</code> (для изображений) — управляет загрузкой изображения (например, <code>loading="lazy"</code> для отложенной загрузки).<br>
+                        <br>
+                        Пример ссылки с атрибутом <code>target</code>:
+                        <pre>
+            &lt;a href="https://example.com" target="_blank" title="Открыть в новой вкладке"&gt;Перейти на сайт&lt;/a&gt;
+                        </pre>
+                        Результат:
+                        <a href="https://example.com" target="_blank" title="Открыть в новой вкладке">Перейти на сайт</a>
+                    </p>
+                </div>
+            
+                <!-- Пример -->
+                <div class="section">
+                    <h2>Пример</h2>
+                    <div class="code-example">
+                        <pre>
+            &lt;!DOCTYPE html&gt;
+            &lt;html&gt;
+            &lt;head&gt;
+                &lt;title&gt;Пример ссылок и изображений&lt;/title&gt;
+            &lt;/head&gt;
+            &lt;body&gt;
+                &lt;h1&gt;Пример ссылки&lt;/h1&gt;
+                &lt;a href="https://example.com" target="_blank" title="Открыть в новой вкладке"&gt;Перейти на сайт&lt;/a&gt;
+            
+                &lt;h1&gt;Пример изображения&lt;/h1&gt;
+                &lt;img src="image.jpg" alt="Описание изображения" width="200"&gt;
+            
+                &lt;h1&gt;Пример ссылки на почту&lt;/h1&gt;
+                &lt;a href="mailto:example@example.com"&gt;Написать письмо&lt;/a&gt;
+            &lt;/body&gt;
+            &lt;/html&gt;
+                        </pre>
+                    </div>
+                    <button onclick="runExample(this)">Запустить пример</button>
+                    <div class="preview-section" id="example-preview-1"></div>
+                </div>
+            
+                <!-- Квиз -->
+                <div class="section">
+                    <h2>Квиз</h2>
+                    <div class="quiz-question">
+                        <p>1. Какой тег используется для создания гиперссылки?</p>
+                        <label><input type="radio" name="q1"> &lt;img&gt;</label>
+                        <label><input type="radio" name="q1" correct> &lt;a&gt;</label>
+                        <label><input type="radio" name="q1"> &lt;link&gt;</label>
+                    </div>
+                    <div class="quiz-question">
+                        <p>2. Какой атрибут указывает путь к изображению?</p>
+                        <label><input type="radio" name="q2"> alt</label>
+                        <label><input type="radio" name="q2" correct> src</label>
+                        <label><input type="radio" name="q2"> href</label>
+                    </div>
+                    <div class="quiz-question">
+                        <p>3. Какой атрибут открывает ссылку в новой вкладке?</p>
+                        <label><input type="radio" name="q3"> title</label>
+                        <label><input type="radio" name="q3" correct> target="_blank"</label>
+                        <label><input type="radio" name="q3"> alt</label>
+                    </div>
+                    <div class="quiz-question">
+                        <p>4. Какой тег используется для добавления изображения?</p>
+                        <label><input type="radio" name="q4"> &lt;a&gt;</label>
+                        <label><input type="radio" name="q4" correct> &lt;img&gt;</label>
+                        <label><input type="radio" name="q4"> &lt;picture&gt;</label>
+                    </div>
+                    <div class="quiz-question">
+                        <p>5. Какой атрибут добавляет всплывающую подсказку к ссылке?</p>
+                        <label><input type="radio" name="q5"> alt</label>
+                        <label><input type="radio" name="q5" correct> title</label>
+                        <label><input type="radio" name="q5"> target</label>
+                    </div>
+                    <button onclick="checkQuiz(this)">Проверить ответы</button>
+                </div>
+            
+                <!-- Практика -->
+                <div class="section">
+                    <h2>Практика</h2>
+                    <div class="practice-area">
+                        <textarea placeholder="Создайте страницу с ссылкой, изображением и ссылкой на почту..."></textarea>
+                        <button onclick="runPractice(this)">Запустить код</button>
+                        <div class="preview-section" id="practice-preview-1"></div>
+                    </div>
+                </div>
+            
+                <!-- Мини-повторение -->
+                <div class="section">
+                    <h2>Мини-повторение</h2>
+                    <p>
+                        * <strong>Гиперссылки</strong> — создаются с помощью тега <code>&lt;a&gt;</code>, основной атрибут — <code>href</code>.<br>
+                        * <strong>Изображения</strong> — добавляются с помощью тега <code>&lt;img&gt;</code>, основные атрибуты — <code>src</code> и <code>alt</code>.<br>
+                        * <strong>Атрибуты</strong> — <code>target="_blank"</code> открывает ссылку в новой вкладке, <code>title</code> добавляет подсказку.<br>
+                    </p>
+                </div>
+            
+                <!-- Итог -->
+                <div class="section">
+                    <h2>Итог</h2>
+                    <p>
+                        Сегодня вы изучили, как добавлять ссылки и изображения на веб-страницу, а также их основные атрибуты. Эти элементы делают сайты интерактивными и визуально привлекательными. В следующем уроке мы рассмотрим таблицы и их использование.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="lesson" id="lesson-7">
+                <!-- Теория -->
+                <div class="section">
+                    <h2>Теория: Таблицы в HTML</h2>
+                    <p>
+                        Таблицы — это важный элемент для представления данных в структурированном виде. В этом уроке мы разберем, как создавать таблицы, объединять ячейки и использовать семантические элементы для улучшения доступности.
+                    </p>
+            
+                    <h2>Создание таблиц</h2>
+                    <p>
+                        Таблицы создаются с помощью тега <code>&lt;table&gt;</code>. Основные теги для работы с таблицами:<br>
+                        - <code>&lt;tr&gt;</code> — определяет строку таблицы.<br>
+                        - <code>&lt;td&gt;</code> — определяет ячейку таблицы.<br>
+                        - <code>&lt;th&gt;</code> — определяет заголовок ячейки (обычно используется для заголовков столбцов).<br>
+                        <br>
+                        Пример:
+                        <pre>
+            &lt;table&gt;
+                &lt;tr&gt;
+                    &lt;th&gt;Имя&lt;/th&gt;
+                    &lt;th&gt;Возраст&lt;/th&gt;
+                &lt;/tr&gt;
+                &lt;tr&gt;
+                    &lt;td&gt;Иван&lt;/td&gt;
+                    &lt;td&gt;25&lt;/td&gt;
+                &lt;/tr&gt;
+            &lt;/table&gt;
+                        </pre>
+                        Результат:
+                        <table>
+                            <tr>
+                                <th>Имя</th>
+                                <th>Возраст</th>
+                            </tr>
+                            <tr>
+                                <td>Иван</td>
+                                <td>25</td>
+                            </tr>
+                        </table>
+                    </p>
+            
+                    <h2>Объединение ячеек</h2>
+                    <p>
+                        Для объединения ячеек в таблице используются атрибуты <code>colspan</code> и <code>rowspan</code>.<br>
+                        - <code>colspan</code> — объединяет ячейки по горизонтали.<br>
+                        - <code>rowspan</code> — объединяет ячейки по вертикали.<br>
+                        <br>
+                        Пример объединения ячеек:
+                        <pre>
+            &lt;table&gt;
+                &lt;tr&gt;
+                    &lt;th colspan="2"&gt;Личная информация&lt;/th&gt;
+                &lt;/tr&gt;
+                &lt;tr&gt;
+                    &lt;td rowspan="2"&gt;Иван&lt;/td&gt;
+                    &lt;td&gt;25&lt;/td&gt;
+                &lt;/tr&gt;
+                &lt;tr&gt;
+                    &lt;td&gt;Мужчина&lt;/td&gt;
+                &lt;/tr&gt;
+            &lt;/table&gt;
+                        </pre>
+                        Результат:
+                        <table>
+                            <tr>
+                                <th colspan="2">Личная информация</th>
+                            </tr>
+                            <tr>
+                                <td rowspan="2">Иван</td>
+                                <td>25</td>
+                            </tr>
+                            <tr>
+                                <td>Мужчина</td>
+                            </tr>
+                        </table>
+                    </p>
+            
+                    <h2>Семантика таблиц</h2>
+                    <p>
+                        Семантические элементы помогают улучшить доступность и понимание таблиц. Используйте следующие теги:<br>
+                        - <code>&lt;caption&gt;</code> — добавляет заголовок таблицы.<br>
+                        - <code>&lt;thead&gt;</code>, <code>&lt;tbody&gt;</code>, <code>&lt;tfoot&gt;</code> — определяют заголовок, тело и подвал таблицы соответственно.<br>
+                        <br>
+                        Пример семантической таблицы:
+                        <pre>
+            &lt;table&gt;
+                &lt;caption&gt;Список пользователей&lt;/caption&gt;
+                &lt;thead&gt;
+                    &lt;tr&gt;
+                        &lt;th&gt;Имя&lt;/th&gt;
+                        &lt;th&gt;Возраст&lt;/th&gt;
+                    &lt;/tr&gt;
+                &lt;/thead&gt;
+                &lt;tbody&gt;
+                    &lt;tr&gt;
+                        &lt;td&gt;Иван&lt;/td&gt;
+                        &lt;td&gt;25&lt;/td&gt;
+                    &lt;/tr&gt;
+                &lt;/tbody&gt;
+            &lt;/table&gt;
+                        </pre>
+                        Результат:
+                        <table>
+                            <caption>Список пользователей</caption>
+                            <thead>
+                                <tr>
+                                    <th>Имя</th>
+                                    <th>Возраст</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Иван</td>
+                                    <td>25</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </p>
+                </div>
+            
+                <!-- Пример -->
+                <div class="section">
+                    <h2>Пример</h2>
+                    <div class="code-example">
+                        <pre>
+            &lt;!DOCTYPE html&gt;
+            &lt;html&gt;
+            &lt;head&gt;
+                &lt;title&gt;Пример таблиц&lt;/title&gt;
+            &lt;/head&gt;
+            &lt;body&gt;
+                &lt;table&gt;
+                    &lt;caption&gt;Список пользователей&lt;/caption&gt;
+                    &lt;thead&gt;
+                        &lt;tr&gt;
+                            &lt;th&gt;Имя&lt;/th&gt;
+                            &lt;th&gt;Возраст&lt;/th&gt;
+                        &lt;/tr&gt;
+                    &lt;/thead&gt;
+                    &lt;tbody&gt;
+                        &lt;tr&gt;
+                            &lt;td&gt;Иван&lt;/td&gt;
+                            &lt;td&gt;25&lt;/td&gt;
+                        &lt;/tr&gt;
+                        &lt;tr&gt;
+                            &lt;td&gt;Мария&lt;/td&gt;
+                            &lt;td&gt;30&lt;/td&gt;
+                        &lt;/tr&gt;
+                    &lt;/tbody&gt;
+                &lt;/table&gt;
+            &lt;/body&gt;
+            &lt;/html&gt;
+                        </pre>
+                    </div>
+                    <button onclick="runExample(this)">Запустить пример</button>
+                    <div class="preview-section" id="example-preview-2"></div>
+                </div>
+            
+                <!-- Квиз -->
+                <div class="section">
+                    <h2>Квиз</h2>
+                    <div class="quiz-question">
+                        <p>1. Какой тег используется для создания таблицы?</p>
+                        <label><input type="radio" name="q1"> &lt;tr&gt;</label>
+                        <label><input type="radio" name="q1" correct> &lt;table&gt;</label>
+                        <label><input type="radio" name="q1"> &lt;td&gt;</label>
+                    </div>
+                    <div class="quiz-question">
+                        <p>2. Какой атрибут объединяет ячейки по горизонтали?</p>
+                        <label><input type="radio" name="q2"> rowspan</label>
+                        <label><input type="radio" name="q2" correct> colspan</label>
+                        <label><input type="radio" name="q2"> span</label>
+                    </div>
+                    <div class="quiz-question">
+                        <p>3. Какой тег используется для заголовка ячейки?</p>
+                        <label><input type="radio" name="q3"> &lt;td&gt;</label>
+                        <label><input type="radio" name="q3" correct> &lt;th&gt;</label>
+                        <label><input type="radio" name="q3"> &lt;tr&gt;</label>
+                    </div>
+                    <div class="quiz-question">
+                        <p>4. Какой тег добавляет заголовок таблицы?</p>
+                        <label><input type="radio" name="q4"> &lt;caption&gt;</label>
+                        <label><input type="radio" name="q4" correct> &lt;title&gt;</label>
+                        <label><input type="radio" name="q4"> &lt;header&gt;</label>
+                    </div>
+                    <div class="quiz-question">
+                        <p>5. Какой тег используется для тела таблицы?</p>
+                        <label><input type="radio" name="q5"> &lt;thead&gt;</label>
+                        <label><input type="radio" name="q5"> &lt;tfoot&gt;</label>
+                        <label><input type="radio" name="q5" correct> &lt;tbody&gt;</label>
+                    </div>
+                    <button onclick="checkQuiz(this)">Проверить ответы</button>
+                </div>
+            
+                <!-- Практика -->
+                <div class="section">
+                    <h2>Практика</h2>
+                    <div class="practice-area">
+                        <textarea placeholder="Создайте таблицу с данными о пользователях..."></textarea>
+                        <button onclick="runPractice(this)">Запустить код</button>
+                        <div class="preview-section" id="practice-preview-2"></div>
+                    </div>
+                </div>
+            
+                <!-- Мини-повторение -->
+                <div class="section">
+                    <h2>Мини-повторение</h2>
+                    <p>
+                        * <strong>Таблицы</strong> — создаются с помощью тега <code>&lt;table&gt;</code>, строки — с помощью <code>&lt;tr&gt;</code>, ячейки — с помощью <code>&lt;td&gt;</code> и <code>&lt;th&gt;</code>.<br>
+                        * <strong>Объединение ячеек</strong> — атрибуты <code>colspan</code> и <code>rowspan</code>.<br>
+                        * <strong>Семантика таблиц</strong> — использование <code>&lt;caption&gt;</code>, <code>&lt;thead&gt;</code>, <code>&lt;tbody&gt;</code>, <code>&lt;tfoot&gt;</code> для улучшения доступности.<br>
+                    </p>
+                </div>
+            
+                <!-- Итог -->
+                <div class="section">
+                    <h2>Итог</h2>
+                    <p>
+                        Сегодня вы изучили, как создавать таблицы в HTML, объединять ячейки и использовать семантические элементы для улучшения доступности. В следующем уроке мы рассмотрим формы и их использование.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="lesson" id="lesson-8">
+                <!-- Теория -->
+                <div class="section">
+                    <h2>Теория: Формы в HTML</h2>
+                    <p>
+                        Формы — это важный элемент для сбора данных от пользователей. В этом уроке мы разберем, как создавать формы, использовать различные типы полей и кнопки для отправки данных.
+                    </p>
+            
+                    <h2>Элементы формы</h2>
+                    <p>
+                        Формы создаются с помощью тега <code>&lt;form&gt;</code>. Основные элементы формы включают:<br>
+                        - <code>&lt;input&gt;</code> — для ввода данных.<br>
+                        - <code>&lt;textarea&gt;</code> — для многострочного ввода текста.<br>
+                        - <code>&lt;select&gt;</code> — для создания выпадающего списка.<br>
+                        - <code>&lt;button&gt;</code> — для создания кнопок.<br>
+                        <br>
+                        Пример формы с основными элементами:
+                        <pre>
+            &lt;form&gt;
+                &lt;label&gt;Имя:&lt;/label&gt;
+                &lt;input type="text" name="name"&gt;
+                &lt;br&gt;
+                &lt;label&gt;Возраст:&lt;/label&gt;
+                &lt;input type="number" name="age"&gt;
+                &lt;br&gt;
+                &lt;input type="submit" value="Отправить"&gt;
+            &lt;/form&gt;
+                        </pre>
+                        Результат:
+                        <form>
+                            <label>Имя:</label>
+                            <input type="text" name="name">
+                            <br>
+                            <label>Возраст:</label>
+                            <input type="number" name="age">
+                            <br>
+                            <input type="submit" value="Отправить">
+                        </form>
+                    </p>
+            
+                    <h2>Типы полей</h2>
+                    <p>
+                        Поля ввода могут иметь различные типы, что позволяет пользователям вводить данные в нужном формате. Основные типы полей:<br>
+                        - <code>text</code> — однострочный текст.<br>
+                        - <code>password</code> — для ввода пароля (символы скрыты).<br>
+                        - <code>email</code> — для ввода адреса электронной почты.<br>
+                        - <code>number</code> — для ввода чисел.<br>
+                        - <code>checkbox</code> — для выбора нескольких опций.<br>
+                        - <code>radio</code> — для выбора одной опции из группы.<br>
+                        <br>
+                        Пример различных типов полей:
+                        <pre>
+            &lt;form&gt;
+                &lt;label&gt;Пароль:&lt;/label&gt;
+                &lt;input type="password" name="password"&gt;
+                &lt;br&gt;
+                &lt;label&gt;Электронная почта:&lt;/label&gt;
+                &lt;input type="email" name="email"&gt;
+                &lt;br&gt;
+                &lt;label&gt;Выберите опции:&lt;/label&gt;
+                &lt;input type="checkbox" name="option1"&gt; Опция 1&lt;br&gt;
+                &lt;input type="checkbox" name="option2"&gt; Опция 2&lt;br&gt;
+                &lt;br&gt;
+                &lt;input type="submit" value="Отправить"&gt;
+            &lt;/form&gt;
+                        </pre>
+                        Результат:
+                        <form>
+                            <label>Пароль:</label>
+                            <input type="password" name="password">
+                            <br>
+                            <label>Электронная почта:</label>
+                            <input type="email" name="email">
+                            <br>
+                            <label>Выберите опции:</label>
+                            <input type="checkbox" name="option1"> Опция 1<br>
+                            <input type="checkbox" name="option2"> Опция 2<br>
+                            <br>
+                            <input type="submit" value="Отправить">
+                        </form>
+                    </p>
+            
+                    <h2>Кнопки</h2>
+                    <p>
+                        Кнопки в формах могут быть различных типов. Основные типы кнопок:<br>
+                        - <code>submit</code> — отправляет форму.<br>
+                        - <code>reset</code> — сбрасывает все поля формы.<br>
+                        - <code>button</code> — обычная кнопка, для выполнения JavaScript.<br>
+                        <br>
+                        Пример кнопок в форме:
+                        <pre>
+            &lt;form&gt;
+                &lt;input type="submit" value="Отправить"&gt;
+                &lt;input type="reset" value="Сбросить"&gt;
+                &lt;button type="button" onclick="alert('Кнопка нажата!')"&gt;Нажми меня&lt;/button&gt;
+            &lt;/form&gt;
+                        </pre>
+                        Результат:
+                        <form>
+                            <input type="submit" value="Отправить">
+                            <input type="reset" value="Сбросить">
+                            <button type="button" onclick="alert('Кнопка нажата!')">Нажми меня</button>
+                        </form>
+                    </p>
+                </div>
+            
+                <!-- Пример -->
+                <div class="section">
+                    <h2>Пример</h2>
+                    <div class="code-example">
+                        <pre>
+            &lt;!DOCTYPE html&gt;
+            &lt;html&gt;
+            &lt;head&gt;
+                &lt;title&gt;Пример формы&lt;/title&gt;
+            &lt;/head&gt;
+            &lt;body&gt;
+                &lt;form&gt;
+                    &lt;label&gt;Имя:&lt;/label&gt;
+                    &lt;input type="text" name="name"&gt;
+                    &lt;br&gt;
+                    &lt;label&gt;Возраст:&lt;/label&gt;
+                    &lt;input type="number" name="age"&gt;
+                    &lt;br&gt;
+                    &lt;input type="submit" value="Отправить"&gt;
+                &lt;/form&gt;
+            &lt;/body&gt;
+            &lt;/html&gt;
+                        </pre>
+                    </div>
+                    <button onclick="runExample(this)">Запустить пример</button>
+                    <div class="preview-section" id="example-preview-3"></div>
+                </div>
+            
+                <!-- Квиз -->
+                <div class="section">
+                    <h2>Квиз</h2>
+                    <div class="quiz-question">
+                        <p>1. Какой тег используется для создания формы?</p>
+                        <label><input type="radio" name="q1"> &lt;input&gt;</label>
+                        <label><input type="radio" name="q1" correct> &lt;form&gt;</label>
+                        <label><input type="radio" name="q1"> &lt;button&gt;</label>
+                    </div>
+                    <div class="quiz-question">
+                        <p>2. Какой тип поля используется для ввода пароля?</p>
+                        <label><input type="radio" name="q2"> text</label>
+                        <label><input type="radio" name="q2" correct> password</label>
+                        <label><input type="radio" name="q2"> email</label>
+                    </div>
+                    <div class="quiz-question">
+                        <p>3. Какой тип кнопки отправляет форму?</p>
+                        <label><input type="radio" name="q3" correct> submit</label>
+                        <label><input type="radio" name="q3"> reset</label>
+                        <label><input type="radio" name="q3"> button</label>
+                    </div>
+                    <div class="quiz-question">
+                        <p>4. Какой тег используется для многострочного ввода текста?</p>
+                        <label><input type="radio" name="q4"> &lt;input&gt;</label>
+                        <label><input type="radio" name="q4" correct> &lt;textarea&gt;</label>
+                        <label><input type="radio" name="q4"> &lt;select&gt;</label>
+                    </div>
+                    <div class="quiz-question">
+                        <p>5. Какой атрибут указывает имя поля ввода?</p>
+                        <label><input type="radio" name="q5"> id</label>
+                        <label><input type="radio" name="q5" correct> name</label>
+                        <label><input type="radio" name="q5"> value</label>
+                    </div>
+                    <button onclick="checkQuiz(this)">Проверить ответы</button>
+                </div>
+            
+                <!-- Практика -->
+                <div class="section">
+                    <h2>Практика</h2>
+                    <div class="practice-area">
+                        <textarea placeholder="Создайте форму для сбора данных о пользователе..."></textarea>
+                        <button onclick="runPractice(this)">Запустить код</button>
+                        <div class="preview-section" id="practice-preview-3"></div>
+                    </div>
+                </div>
+            
+                <!-- Мини-повторение -->
+                <div class="section">
+                    <h2>Мини-повторение</h2>
+                    <p>
+                        * <strong>Формы</strong> — создаются с помощью тега <code>&lt;form&gt;</code>, элементы формы — <code>&lt;input&gt;</code>, <code>&lt;textarea&gt;</code>, <code>&lt;select&gt;</code>, <code>&lt;button&gt;</code>.<br>
+                        * <strong>Типы полей</strong> — <code>text</code>, <code>password</code>, <code>email</code>, <code>number</code>, <code>checkbox</code>, <code>radio</code>.<br>
+                        * <strong>Кнопки</strong> — <code>submit</code>, <code>reset</code>, <code>button</code>.<br>
+                    </p>
+                </div>
+            
+                <!-- Итог -->
+                <div class="section">
+                    <h2>Итог</h2>
+                    <p>
+                        Сегодня вы изучили, как создавать формы в HTML, использовать различные типы полей и кнопки для отправки данных. В следующем уроке мы рассмотрим валидацию форм и обработку данных на сервере.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="lesson" id="lesson-9">
+                <!-- Теория -->
+                <div class="section">
+                    <h2>Теория: Семантические теги в HTML</h2>
+                    <p>
+                        Семантические теги — это теги, которые имеют четкое значение и описывают структуру документа. Они помогают улучшить доступность и SEO, а также делают код более понятным для разработчиков.
+                    </p>
+            
+                    <h2>Основные семантические теги</h2>
+                    <p>
+                        В HTML5 были введены несколько семантических тегов, которые помогают структурировать контент. Основные из них:<br>
+                        - <code>&lt;header&gt;</code> — для верхней части страницы или раздела.<br>
+                        - <code>&lt;footer&gt;</code> — для нижней части страницы или раздела.<br>
+                        - <code>&lt;nav&gt;</code> — для навигационных ссылок.<br>
+                        - <code>&lt;section&gt;</code> — для разделов контента.<br>
+                        - <code>&lt;article&gt;</code> — для независимого контента, который может быть опубликован отдельно.<br>
+                        - <code>&lt;aside&gt;</code> — для контента, который связан с основным, но не является его частью.<br>
+                        <br>
+                        Пример использования семантических тегов:
+                        <pre>
+            &lt;header&gt;
+                &lt;h1&gt;Заголовок сайта&lt;/h1&gt;
+                &lt;nav&gt;
+                    &lt;ul&gt;
+                        &lt;li&gt;&lt;a href="#home"&gt;Главная&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#about"&gt;О нас&lt;/a&gt;&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/nav&gt;
+            &lt;/header&gt;
+            
+            &lt;section&gt;
+                &lt;article&gt;
+                    &lt;h2&gt;Статья 1&lt;/h2&gt;
+                    &lt;p&gt;Содержимое статьи 1.&lt;/p&gt;
+                &lt;/article&gt;
+                &lt;article&gt;
+                    &lt;h2&gt;Статья 2&lt;/h2&gt;
+                    &lt;p&gt;Содержимое статьи 2.&lt;/p&gt;
+                &lt;/article&gt;
+            &lt;/section&gt;
+            
+            &lt;aside&gt;
+                &lt;h3&gt;Дополнительная информация&lt;/h3&gt;
+                &lt;p&gt;Некоторая дополнительная информация.&lt;/p&gt;
+            &lt;/aside&gt;
+            
+            &lt;footer&gt;
+                &lt;p&gt;© 2023 Все права защищены.&lt;/p&gt;
+            &lt;/footer&gt;
+                        </pre>
+                        Результат:
+                        <header>
+                            <h1>Заголовок сайта</h1>
+                            <nav>
+                                <ul>
+                                    <li><a href="#home">Главная</a></li>
+                                    <li><a href="#about">О нас</a></li>
+                                </ul>
+                            </nav>
+                        </header>
+            
+                        <section>
+                            <article>
+                                <h2>Статья 1</h2>
+                                <p>Содержимое статьи 1.</p>
+                            </article>
+                            <article>
+                                <h2>Статья 2</h2>
+                                <p>Содержимое статьи 2.</p>
+                            </article>
+                        </section>
+            
+                        <aside>
+                            <h3>Дополнительная информация</h3>
+                            <p>Некоторая дополнительная информация.</p>
+                        </aside>
+            
+                        <footer>
+                            <p>© 2023 Все права защищены.</p>
+                        </footer>
+                    </p>
+            
+                    <h2>Преимущества семантической верстки</h2>
+                    <p>
+                        Использование семантических тегов имеет множество преимуществ:<br>
+                        - **Улучшение SEO**: Поисковые системы лучше понимают структуру страницы и могут индексировать контент более эффективно.<br>
+                        - **Доступность**: Экранные читалки и другие вспомогательные технологии могут легче интерпретировать семантические теги, что делает контент более доступным для людей с ограниченными возможностями.<br>
+                        - **Читаемость кода**: Код становится более понятным для разработчиков, что упрощает его поддержку и развитие.<br>
+                        - **Структурирование контента**: Семантические теги помогают организовать контент на странице, что улучшает пользовательский опыт.<br>
+                    </p>
+                </div>
+            
+                <!-- Пример -->
+                <div class="section">
+                    <h2>Пример</h2>
+                    <div class="code-example">
+                        <pre>
+            &lt;!DOCTYPE html&gt;
+            &lt;html&gt;
+            &lt;head&gt;
+                &lt;title&gt;Пример семантической верстки&lt;/title&gt;
+            &lt;/head&gt;
+            &lt;body&gt;
+                &lt;header&gt;
+                    &lt;h1&gt;Заголовок сайта&lt;/h1&gt;
+                    &lt;nav&gt;
+                        &lt;ul&gt;
+                            &lt;li&gt;&lt;a href="#home"&gt;Главная&lt;/a&gt;&lt;/li&gt;
+                            &lt;li&gt;&lt;a href="#about"&gt;О нас&lt;/a&gt;&lt;/li&gt;
+                        &lt;/ul&gt;
+                    &lt;/nav&gt;
+                &lt;/header&gt;
+            
+                &lt;section&gt;
+                    &lt;article&gt;
+                        &lt;h2&gt;Статья 1&lt;/h2&gt;
+                        &lt;p&gt;Содержимое статьи 1.&lt;/p&gt;
+                    &lt;/article&gt;
+                    &lt;article&gt;
+                        &lt;h2&gt;Статья 2&lt;/h2&gt;
+                        &lt;p&gt;Содержимое статьи 2.&lt;/p&gt;
+                    &lt;/article&gt;
+                &lt;/section&gt;
+            
+                &lt;aside&gt;
+                    &lt;h3&gt;Дополнительная информация&lt;/h3&gt;
+                    &lt;p&gt;Некоторая дополнительная информация.&lt;/p&gt;
+                &lt;/aside&gt;
+            
+                &lt;footer&gt;
+                    &lt;p&gt;© 2023 Все права защищены.&lt;/p&gt;
+                &lt;/footer&gt;
+            &lt;/body&gt;
+            &lt;/html&gt;
+                        </pre>
+                    </div>
+                    <button onclick="runExample(this)">Запустить пример</button>
+                    <div class="preview-section" id="example-preview-4"></div>
+                </div>
+            
+                <!-- Квиз -->
+                <div class="section">
+                    <h2>Квиз</h2>
+                    <div class="quiz-question">
+                        <p>1. Какой тег используется для верхней части страницы?</p>
+                        <label><input type="radio" name="q1"> &lt;footer&gt;</label>
+                        <label><input type="radio" name="q1" correct> &lt;header&gt;</label>
+                        <label><input type="radio" name="q1"> &lt;nav&gt;</label>
+                    </div>
+                    <div class="quiz-question">
+                        <p>2. Какой тег используется для навигационных ссылок?</p>
+                        <label><input type="radio" name="q2"> &lt;section&gt;</label>
+                        <label><input type="radio" name="q2" correct> &lt;nav&gt;</label>
+                        <label><input type="radio" name="q2"> &lt;article&gt;</label>
+                    </div>
+                    <div class="quiz-question">
+                        <p>3. Какой тег используется для независимого контента?</p>
+                        <label><input type="radio" name="q3" correct> &lt;article&gt;</label>
+                        <label><input type="radio" name="q3"> &lt;aside&gt;</label>
+                        <label><input type="radio" name="q3"> &lt;section&gt;</label>
+                    </div>
+                    <div class="quiz-question">
+                        <p>4. Какой тег используется для дополнительной информации?</p>
+                        <label><input type="radio" name="q4"> &lt;article&gt;</label>
+                        <label><input type="radio" name="q4"> &lt;section&gt;</label>
+                        <label><input type="radio" name="q4" correct> &lt;aside&gt;</label>
+                    </div>
+                    <div class="quiz-question">
+                        <p>5. Какой тег используется для нижней части страницы?</p>
+                        <label><input type="radio" name="q5"> &lt;header&gt;</label>
+                        <label><input type="radio" name="q5"> &lt;nav&gt;</label>
+                        <label><input type="radio" name="q5" correct> &lt;footer&gt;</label>
+                    </div>
+                    <button onclick="checkQuiz(this)">Проверить ответы</button>
+                </div>
+            
+                <!-- Практика -->
+                <div class="section">
+                    <h2>Практика</h2>
+                    <div class="practice-area">
+                        <textarea placeholder="Создайте структуру страницы с использованием семантических тегов..."></textarea>
+                        <button onclick="runPractice(this)">Запустить код</button>
+                        <div class="preview-section" id="practice-preview-4"></div>
+                    </div>
+                </div>
+            
+                <!-- Мини-повторение -->
+                <div class="section">
+                    <h2>Мини-повторение</h2>
+                    <p>
+                        * <strong>Семантические теги</strong> — это теги, которые имеют четкое значение и описывают структуру документа: <code>&lt;header&gt;</code>, <code>&lt;footer&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;article&gt;</code>, <code>&lt;aside&gt;</code>.<br>
+                        * <strong>Преимущества семантической верстки</strong> — улучшение SEO, доступность, читаемость кода, структурирование контента.<br>
+                    </p>
+                </div>
+            
+                <!-- Итог -->
+                <div class="section">
+                    <h2>Итог</h2>
+                    <p>
+                        Сегодня вы изучили, что такое семантические теги в HTML, их основные виды и преимущества использования семантической верстки. В следующем уроке мы рассмотрим стилизацию элементов с помощью CSS.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="lesson" id="lesson-10">
+                <!-- Теория -->
+                <div class="section">
+                    <h2>Теория: Мультимедиа в HTML</h2>
+                    <p>
+                        Мультимедиа — это важный аспект веб-разработки, который позволяет добавлять видео и аудио на веб-страницы. В этом уроке мы рассмотрим, как вставлять видео и аудио, а также использовать iframe для встраивания контента с других сайтов.
+                    </p>
+            
+                    <h2>Вставка видео</h2>
+                    <p>
+                        Для вставки видео на страницу используется тег <code>&lt;video&gt;</code>. Этот тег поддерживает различные атрибуты, такие как <code>controls</code> для отображения элементов управления, <code>autoplay</code> для автоматического воспроизведения и <code>loop</code> для зацикливания видео.<br>
+                        Пример вставки видео:
+                        <pre>
+            &lt;video width="640" height="360" controls&gt;
+                &lt;source src="video.mp4" type="video/mp4"&gt;
+                Ваш браузер не поддерживает видео.
+            &lt;/video&gt;
+                        </pre>
+                        Результат:
+                        <video width="640" height="360" controls>
+                            <source src="video.mp4" type="video/mp4">
+                            Ваш браузер не поддерживает видео.
+                        </video>
+                    </p>
+            
+                    <h2>Вставка аудио</h2>
+                    <p>
+                        Для вставки аудио на страницу используется тег <code>&lt;audio&gt;</code>. Он также поддерживает атрибуты <code>controls</code>, <code>autoplay</code> и <code>loop</code>.<br>
+                        Пример вставки аудио:
+                        <pre>
+            &lt;audio controls&gt;
+                &lt;source src="audio.mp3" type="audio/mpeg"&gt;
+                Ваш браузер не поддерживает аудио.
+            &lt;/audio&gt;
+                        </pre>
+                        Результат:
+                        <audio controls>
+                            <source src="audio.mp3" type="audio/mpeg">
+                            Ваш браузер не поддерживает аудио.
+                        </audio>
+                    </p>
+            
+                    <h2>Использование iframe</h2>
+                    <p>
+                        Тег <code>&lt;iframe&gt;</code> позволяет встраивать контент с других сайтов, таких как видео с YouTube или карты Google. Этот тег также поддерживает атрибуты, такие как <code>width</code>, <code>height</code> и <code>src</code>.<br>
+                        Пример использования iframe:
+                        <pre>
+            &lt;iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
+                        </pre>
+                        Результат:
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe>
+                    </p>
+                </div>
+            
+                <!-- Пример -->
+                <div class="section">
+                    <h2>Пример</h2>
+                    <div class="code-example">
+                        <pre>
+            &lt;!DOCTYPE html&gt;
+            &lt;html&gt;
+            &lt;head&gt;
+                &lt;title&gt;Пример мультимедиа&lt;/title&gt;
+            &lt;/head&gt;
+            &lt;body&gt;
+                &lt;h2&gt;Вставка видео&lt;/h2&gt;
+                &lt;video width="640" height="360" controls&gt;
+                    &lt;source src="video.mp4" type="video/mp4"&gt;
+                    Ваш браузер не поддерживает видео.
+                &lt;/video&gt;
+            
+                &lt;h2&gt;Вставка аудио&lt;/h2&gt;
+                &lt;audio controls&gt;
+                    &lt;source src="audio.mp3" type="audio/mpeg"&gt;
+                    Ваш браузер не поддерживает аудио.
+                &lt;/audio&gt;
+            
+                &lt;h2&gt;Использование iframe&lt;/h2&gt;
+                &lt;iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
+            &lt;/body&gt;
+            &lt;/html&gt;
+                        </pre>
+                    </div>
+                    <button onclick="runExample(this)">Запустить пример</button>
+                    <div class="preview-section" id="example-preview-4"></div>
+                </div>
+            
+                <!-- Квиз -->
+                <div class="section">
+                    <h2>Квиз</h2>
+                    <div class="quiz-question">
+                        <p>1. Какой тег используется для вставки видео?</p>
+                        <label><input type="radio" name="q1"> &lt;audio&gt;</label>
+                        <label><input type="radio" name="q1" correct> &lt;video&gt;</label>
+                        <label><input type="radio" name="q1"> &lt;iframe&gt;</label>
+                    </div>
+                    <div class="quiz-question">
+                        <p>2. Какой атрибут у тега &lt;audio&gt; позволяет отображать элементы управления?</p>
+                        <label><input type="radio" name="q2" correct> controls</label>
+                        <label><input type="radio" name="q2"> autoplay</label>
+                        <label><input type="radio" name="q2"> loop</label>
+                    </div>
+                    <div class="quiz-question">
+                        <p>3. Какой тег используется для встраивания контента с других сайтов?</p>
+                        <label><input type="radio" name="q3" correct> &lt;iframe&gt;</label>
+                        <label><input type="radio" name="q3"> &lt;video&gt;</label>
+                        <label><input type="radio" name="q3"> &lt;audio&gt;</label>
+                    </div>
+                    <div class="quiz-question">
+                        <p>4. Какой атрибут у тега &lt;video&gt; позволяет зацикливать видео?</p>
+                        <label><input type="radio" name="q4"> controls</label>
+                        <label><input type="radio" name="q4"> autoplay</label>
+                        <label><input type="radio" name="q4" correct> loop</label>
+                    </div>
+                    <div class="quiz-question">
+                        <p>5. Какой атрибут у тега &lt;iframe&gt; указывает источник контента?</p>
+                        <label><input type="radio" name="q5"> src</label>
+                        <label><input type="radio" name="q5" correct> src</label>
+                        <label><input type="radio" name="q5"> href</label>
+                    </div>
+                    <button onclick="checkQuiz(this)">Проверить ответы</button>
+                </div>
+            
+                <!-- Практика -->
+                <div class="section">
+                    <h2>Практика</h2>
+                    <div class="practice-area">
+                        <textarea placeholder="Создайте страницу с мультимедийным контентом..."></textarea>
+                        <button onclick="runPractice(this)">Запустить код</button>
+                        <div class="preview-section" id="practice-preview-4"></div>
+                    </div>
+                </div>
+            
+                <!-- Мини-повторение -->
+                <div class="section">
+                    <h2>Мини-повторение</h2>
+                    <p>
+                        * <strong>Мультимедиа</strong> — это видео и аудио, которые можно вставлять с помощью тегов <code>&lt;video&gt;</code> и <code>&lt;audio&gt;</code>.<br>
+                        * <strong>iframe</strong> — используется для встраивания контента с других сайтов.<br>
+                    </p>
+                </div>
+            
+                <!-- Итог -->
+                <div class="section">
+                    <h2>Итог</h2>
+                    <p>
+                        Сегодня вы изучили, как вставлять видео и аудио на веб-страницы, а также использовать iframe для встраивания контента с других сайтов. В следующем уроке мы рассмотрим стилизацию мультимедийных элементов с помощью CSS.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="lesson" id="lesson-11">
+                <!-- Теория -->
+                <div class="section">
+                    <h2>Теория: Встраивание карт в HTML</h2>
+                    <p>
+                        Встраивание карт на веб-страницы позволяет пользователям легко находить местоположение и получать информацию о различных местах. В этом уроке мы рассмотрим, как использовать тег <code>&lt;iframe&gt;</code> для встраивания карт, а также как использовать API карт для более продвинутых функций.
+                    </p>
+            
+                    <h2>Встраивание карт с помощью iframe</h2>
+                    <p>
+                        Один из самых простых способов встраивания карты — это использование сервиса Google Maps. Вы можете получить код для встраивания карты, выбрав нужное место на Google Maps и нажав на кнопку "Поделиться", затем "Встроить карту".<br>
+                        Пример встраивания карты:
+                        <pre>
+            &lt;iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.835434509123!2d144.9537353153164!3d-37.81627997975157!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11f1b3%3A0x5045675218ceed0!2sMelbourne%20CBD%2C%20Melbourne%20VIC%2C%20Australia!5e0!3m2!1sen!2sus!4v1616161616161!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"&gt;&lt;/iframe&gt;
+                        </pre>
+                        Результат:
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.835434509123!2d144.9537353153164!3d-37.81627997975157!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11f1b3%3A0x5045675218ceed0!2sMelbourne%20CBD%2C%20Melbourne%20VIC%2C%20Australia!5e0!3m2!1sen!2sus!4v1616161616161!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </p>
+            
+                   
+                        </pre>
+                        
+                </div>
+            
+                <!-- Пример -->
+                <div class="section">
+                    <h2>Пример</h2>
+                    <div class="code-example">
+                        <pre>
+            &lt;!DOCTYPE html&gt;
+            &lt;html&gt;
+            &lt;head&gt;
+                &lt;title&gt;Пример встраивания карты&lt;/title&gt;
+                &lt;style&gt;
+                    #map {
+                        height: 400px;
+                        width: 100%;
+                    }
+                &lt;/style&gt;
+            &lt;/head&gt;
+            &lt;body&gt;
+                &lt;h2&gt;Встраивание карты&lt;/h2&gt;
+                &lt;iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.835434509123!2d144.9537353153164!3d-37.81627997975157!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11f1b3%3A0x5045675218ceed0!2sMelbourne%20CBD%2C%20Melbourne%20VIC%2C%20Australia!5e0!3m2!1sen!2sus!4v1616161616161!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"&gt;&lt;/iframe&gt;
+            &lt;/body&gt;
+            &lt;/html&gt;
+                        </pre>
+                    </div>
+                    <button onclick="runExample(this)">Запустить пример</button>
+                    <div class="preview-section" id="example-preview-5"></div>
+                </div>
+            
+                <!-- Квиз -->
+                <div class="section">
+                    <h2>Квиз</h2>
+                    <div class="quiz-question">
+                        <p>1. Какой тег используется для встраивания карты?</p>
+                        <label><input type="radio" name="q1"> &lt;map&gt;</label>
+                        <label><input type="radio" name="q1" correct> &lt;iframe&gt;</label>
+                        <label><input type="radio" name="q1"> &lt;canvas&gt;</label>
+                    </div>
+                    <div class="quiz-question">
+                        <p>2. Какой атрибут у тега &lt;iframe&gt; указывает источник карты?</p>
+                        <label><input type="radio" name="q2"> src</label>
+                        <label><input type="radio" name="q2" correct> src</label>
+                        <label><input type="radio" name="q2"> href</label>
+                    </div>
+                    <div class="quiz-question">
+                        <p>3. Какой API можно использовать для создания интерактивных карт?</p>
+                        <label><input type="radio" name="q3" correct> Google Maps API</label>
+                        <label><input type="radio" name="q3"> OpenStreetMap API</label>
+                        <label><input type="radio" name="q3"> Leaflet API</label>
+                    </div>
+                    <div class="quiz-question">
+                        <p>4. Какой атрибут у тега &lt;iframe&gt; позволяет загружать карту в фоновом режиме?</p>
+                        <label><input type="radio" name="q4"> loading</label>
+                        <label><input type="radio" name="q4" correct> loading</label>
+                        <label><input type="radio" name="q4"> async</label>
+                    </div>
+                    <div class="quiz-question">
+                        <p>5. Какой метод используется для добавления маркера на карту в Google Maps API?</p>
+                        <label><input type="radio" name="q5" correct> new google.maps.Marker()</label>
+                        <label><input type="radio" name="q5"> addMarker()</label>
+                        <label><input type="radio" name="q5"> setMarker()</label>
+                    </div>
+                    <button onclick="checkQuiz(this)">Проверить ответы</button>
+                </div>
+            
+                <!-- Практика -->
+                <div class="section">
+                    <h2>Практика</h2>
+                    <div class="practice-area">
+                        <textarea placeholder="Создайте страницу с встраиванием карты..."></textarea>
+                        <button onclick="runPractice(this)">Запустить код</button>
+                        <div class="preview-section" id="practice-preview-5"></div>
+                    </div>
+                </div>
+            
+                <!-- Мини-повторение -->
+                <div class="section">
+                    <h2>Мини-повторение</h2>
+                    <p>
+                        * <strong>Встраивание карт</strong> — используется для отображения местоположений на веб-страницах с помощью тега <code>&lt;iframe&gt;</code>.<br>
+                        * <strong>Google Maps API</strong> — позволяет создавать интерактивные карты с маркерами и другими функциями.<br>
+                    </p>
+                </div>
+            
+                <!-- Итог -->
+                <div class="section">
+                    <h2>Итог</h2>
+                    <p>
+                        Сегодня вы изучили, как встраивать карты на веб-страницы с помощью тега <code>&lt;iframe&gt;</code> и как использовать Google Maps API для создания интерактивных карт. В следующем уроке мы рассмотрим основы работы с CSS для стилизации мультимедийных элементов.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="lesson" id="lesson-12">
+                <!-- Теория -->
+                <div class="section">
+                    <h2>Теория: Метатеги и SEO</h2>
+                    <p>
+                        Метатеги — это специальные теги в HTML, которые содержат метаданные о веб-странице. Они не отображаются на самой странице, но играют важную роль в SEO (поисковой оптимизации) и помогают поисковым системам лучше индексировать и ранжировать ваш контент.
+                    </p>
+            
+                    <h2>Метатеги <code>&lt;meta&gt;</code> и <code>&lt;title&gt;</code></h2>
+                    <p>
+                        Тег <code>&lt;title&gt;</code> определяет заголовок страницы, который отображается в заголовке окна браузера и в результатах поиска. Он должен быть уникальным и содержать ключевые слова, относящиеся к содержимому страницы.<br>
+                        Пример использования тега <code>&lt;title&gt;</code>:
+                        <pre>
+            &lt;title&gt;Лучшие рецепты для домашней кухни&lt;/title&gt;
+                        </pre>
+                        Тег <code>&lt;meta&gt;</code> используется для определения различных метаданных, таких как описание страницы, ключевые слова и кодировка. Например, тег <code>&lt;meta name="description"&gt;</code> предоставляет краткое описание содержимого страницы, которое отображается в результатах поиска.<br>
+                        Пример использования метатегов:
+                        <pre>
+            &lt;meta charset="UTF-8"&gt;
+            &lt;meta name="description" content="Собрание лучших рецептов для домашней кухни."&gt;
+            &lt;meta name="keywords" content="рецепты, кухня, домашняя еда"&gt;
+                        </pre>
+                        Результат:
+                        <meta charset="UTF-8">
+                        <meta name="description" content="Собрание лучших рецептов для домашней кухни.">
+                        <meta name="keywords" content="рецепты, кухня, домашняя еда">
+                    </p>
+            
+                    <h2>Оптимизация HTML для поисковых систем</h2>
+                    <p>
+                        Оптимизация HTML-кода помогает улучшить видимость вашего сайта в поисковых системах. Вот несколько рекомендаций по оптимизации:<br>
+                        - **Используйте семантические теги**: Использование семантических тегов, таких как <code>&lt;header&gt;</code>, <code>&lt;footer&gt;</code>, <code>&lt;article&gt;</code> и <code>&lt;section&gt;</code>, помогает поисковым системам лучше понимать структуру вашего контента.<br>
+                        - **Оптимизируйте заголовки**: Используйте теги заголовков <code>&lt;h1&gt;</code> для основного заголовка страницы и <code>&lt;h2&gt;</code>, <code>&lt;h3&gt;</code> для подзаголовков. Это помогает структурировать контент и выделить ключевые темы.<br>
+                        - **Добавьте альтернативный текст к изображениям**: Используйте атрибут <code>alt</code> для изображений, чтобы описать их содержимое. Это помогает поисковым системам индексировать изображения и улучшает доступность.<br>
+                        - **Создайте удобные URL**: Используйте понятные и описательные URL, содержащие ключевые слова, чтобы улучшить индексирование страниц.<br>
+                        - **Сократите время загрузки страницы**: Оптимизируйте изображения и используйте кэширование, чтобы улучшить скорость загрузки страниц, что также положительно сказывается на SEO.<br>
+                    </p>
+                </div>
+            
+                <!-- Пример -->
+                <div class="section">
+                    <h2>Пример</h2>
+                    <p>Рекомендуетмя создать файл с расширением .html и втавить туда этот код, после чего запустить в браузере просто открыв файл с помощью браузера а не через Редактор кода</p>
+                    <div class="code-example">
+                        <pre>
+            &lt;!DOCTYPE html&gt;
+            &lt;html lang="ru"&gt;
+            &lt;head&gt;
+                &lt;meta charset="UTF-8"&gt;
+                &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+                &lt;title&gt;Лучшие рецепты для домашней кухни&lt;/title&gt;
+                &lt;meta name="description" content="Собрание лучших рецептов для домашней кухни."&gt;
+                &lt;meta name="keywords" content="рецепты, кухня, домашняя еда"&gt;
+            &lt;/head&gt;
+            &lt;body&gt;
+                &lt;header&gt;
+                    &lt;h1&gt;Лучшие рецепты&lt;/h1&gt;
+                &lt;/header&gt;
+                &lt;section&gt;
+                    &lt;article&gt;
+                        &lt;h2&gt;Рецепт 1: Борщ&lt;/h2&gt;
+                        &lt;p&gt;Описание рецепта борща.&lt;/p&gt;
+                    &lt;/article&gt;
+                    &lt;article&gt;
+                        &lt;h2&gt;Рецепт 2: Пельмени&lt;/h2&gt;
+                        &lt;p&gt;Описание рецепта пельменей.&lt;/p&gt;
+                    &lt;/article&gt;
+                &lt;/section&gt;
+                &lt;footer&gt;
+                    &lt;p&gt;© 2023 Все права защищены.&lt;/p&gt;
+                &lt;/footer&gt;
+            &lt;/body&gt;
+            &lt;/html&gt;
+                        </pre>
+                    </div>
+                    <button onclick="runExample(this)">Запустить пример</button>
+                    <div class="preview-section" id="example-preview-6"></div>
+                </div>
+            
+                <!-- Квиз -->
+                <div class="section">
+                    <h2>Квиз</h2>
+                    <div class="quiz-question">
+                        <p>1. Какой тег используется для определения заголовка страницы?</p>
+                        <label><input type="radio" name="q1" correct> &lt;title&gt;</label>
+                        <label><input type="radio" name="q1"> &lt;meta&gt;</label>
+                        <label><input type="radio" name="q1"> &lt;header&gt;</label>
+                    </div>
+                    <div class="quiz-question">
+                        <p>2. Какой атрибут у тега &lt;meta&gt; используется для описания содержимого страницы?</p>
+                        <label><input type="radio" name="q2" correct> name="description"</label>
+                        <label><input type="radio" name="q2"> name="keywords"</label>
+                        <label><input type="radio" name="q2"> name="author"</label>
+                    </div>
+                    <div class="quiz-question">
+                        <p>3. Какой тег используется для основного заголовка страницы?</p>
+                        <label><input type="radio" name="q3" correct> &lt;h1&gt;</label>
+                        <label><input type="radio" name="q3"> &lt;h2&gt;</label>
+                        <label><input type="radio" name="q3"> &lt;h3&gt;</label>
+                    </div>
+                    <div class="quiz-question">
+                        <p>4. Какой атрибут у изображения помогает поисковым системам индексировать его?</p>
+                        <label><input type="radio" name="q4"> title</label>
+                        <label><input type="radio" name="q4" correct> alt</label>
+                        <label><input type="radio" name="q4"> src</label>
+                    </div>
+                    <div class="quiz-question">
+                        <p>5. Какой элемент помогает улучшить скорость загрузки страницы?</p>
+                        <label><input type="radio" name="q5"> Оптимизация URL</label>
+                        <label><input type="radio" name="q5" correct> Оптимизация изображений</label>
+                        <label><input type="radio" name="q5"> Использование длинных URL</label>
+                    </div>
+                    <button onclick="checkQuiz(this)">Проверить ответы</button>
+                </div>
+            
+                <!-- Практика -->
+                <div class="section">
+                    <h2>Практика</h2>
+                    <div class="practice-area">
+                        <textarea placeholder="Создайте HTML-страницу с метатегами и оптимизацией для SEO..."></textarea>
+                        <button onclick="runPractice(this)">Запустить код</button>
+                        <div class="preview-section" id="practice-preview-6"></div>
+                    </div>
+                </div>
+            
+                <!-- Мини-повторение -->
+                <div class="section">
+                    <h2>Мини-повторение</h2>
+                    <p>
+                        * <strong>Метатеги</strong> — это теги, которые содержат метаданные о веб-странице, такие как <code>&lt;title&gt;</code> и <code>&lt;meta&gt;</code>.<br>
+                        * <strong>Оптимизация HTML</strong> для поисковых систем включает использование семантических тегов, оптимизацию заголовков, добавление альтернативного текста к изображениям и создание удобных URL.<br>
+                    </p>
+                </div>
+            
+                <!-- Итог -->
+                <div class="section">
+                    <h2>Итог</h2>
+                    <p>
+                        Сегодня вы изучили, как использовать метатеги для улучшения SEO и оптимизации HTML-кода для поисковых систем. В следующем уроке мы рассмотрим основы работы с CSS для стилизации веб-страниц.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="lesson" id="lesson-13">
+                <!-- Теория -->
+                <div class="section">
+                    <h2>Практика: Основные HTML-теги</h2>
+                    <p>
+                        В этом уроке мы рассмотрим основные HTML-теги и их функционал. Эти теги являются основой для создания веб-страниц и помогут вам в дальнейшем при разработке вашего портфолио-визитки.
+                    </p>
+                    
+                    <h3>Основные HTML-теги</h3>
+                    <ul>
+                        <li>
+                            <code>&lt;!DOCTYPE html&gt;</code> — Определяет тип документа и версию HTML.
+                        </li>
+                        <li>
+                            <code>&lt;html&gt;</code> — Корневой элемент HTML-документа.
+                        </li>
+                        <li>
+                            <code>&lt;head&gt;</code> — Содержит метаданные о документе, такие как заголовок, ссылки на стили и скрипты.
+                        </li>
+                        <li>
+                            <code>&lt;title&gt;</code> — Определяет заголовок страницы, который отображается в заголовке окна браузера.
+                        </li>
+                        <li>
+                            <code>&lt;meta&gt;</code> — Используется для определения метаданных, таких как кодировка и описание страницы.
+                        </li>
+                        <li>
+                            <code>&lt;link&gt;</code> — Связывает внешний файл стилей (CSS) с HTML-документом.
+                        </li>
+                        <li>
+                            <code>&lt;style&gt;</code> — Встраивает CSS-стили непосредственно в HTML-документ.
+                        </li>
+                        <li>
+                            <code>&lt;body&gt;</code> — Содержит основной контент страницы, который отображается пользователю.
+                        </li>
+                        <li>
+                            <code>&lt;header&gt;</code> — Определяет верхнюю часть страницы, обычно содержит заголовок и навигацию.
+                        </li>
+                        <li>
+                            <code>&lt;nav&gt;</code> — Содержит навигационные ссылки.
+                        </li>
+                        <li>
+                            <code>&lt;section&gt;</code> — Определяет раздел контента, который может содержать заголовок и другие элементы.
+                        </li>
+                        <li>
+                            <code>&lt;article&gt;</code> — Определяет независимый контент, который может быть опубликован отдельно.
+                        </li>
+                        <li>
+                            <code>&lt;h1&gt; - &lt;h6&gt;</code> — Заголовки, где <code>&lt;h1&gt;</code> — самый важный, а <code>&lt;h6&gt;</code> — наименее важный.
+                        </li>
+                        <li>
+                            <code>&lt;p&gt;</code> — Определяет абзац текста.
+                        </li>
+                        <li>
+                            <code>&lt;ul&gt;</code> — Создает ненумерованный список.
+                        </li>
+                        <li>
+                            <code>&lt;ol&gt;</code> — Создает нумерованный список.
+                        </li>
+                        <li>
+                            <code>&lt;li&gt;</code> — Определяет элемент списка.
+                        </li>
+                        <li>
+                            <code>&lt;img&gt;</code> — Вставляет изображение на страницу.
+                        </li>
+                        <li>
+                            <code>&lt;a&gt;</code> — Создает гиперссылку.
+                        </li>
+                        <li>
+                            <code>&lt;footer&gt;</code> — Определяет нижнюю часть страницы, обычно содержит информацию о авторских правах и ссылки на политику конфиденциальности.
+                        </li>
+                        <li>
+                            <code>&lt;div&gt;</code> — Определяет раздел или контейнер для других элементов, используется для группировки.
+                        </li>
+                        <li>
+                            <code>&lt;span&gt;</code> — Используется для выделения небольших фрагментов текста внутри других элементов.
+                        </li>
+                    </ul>
+
+                        <h3>Пример визуального результата</h3>
+                        <img src="exap.png" alt="Пример портфолио-визитки" style="max-width: 100%; height: auto; border: 2px solid black;">
+                         <p>Сохраните код в текстовом файле с расширением <code>.html</code> и откройте его в браузере, чтобы увидеть результат.</p>
+
+                </div>
+            
+                <!-- Поле для ввода кода -->
+                <div class="section">
+                    <h2>Ваш код</h2>
+                    <textarea id="html-tags-code" rows="15" placeholder="Введите ваш HTML-код здесь..." style="width: 100%;"></textarea>
+                    <button onclick="runHtmlTagsExample()">Запустить код</button>
+                    <div class="preview-section" id="html-tags-preview"></div>
+                </div>
+            </div>
+            
+            <script>
+                function runHtmlTagsExample() {
+                    const code = document.getElementById('html-tags-code').value;
+                    const previewSection = document.getElementById('html-tags-preview');
+                    previewSection.innerHTML = code;
+                }
+            </script>
 
                 <button class="next-lesson-btn" onclick="nextLesson()">Следующий урок</button>
 <!-- Переключатель темы -->
@@ -1041,7 +2336,7 @@ function runPractice(btn) {
             if (savedTheme === 'dark') document.body.classList.add('dark-theme');
         }
 
-        // Загрузка
+        // Загрузка 
         window.onload = () => {
             initTheme();
         }
