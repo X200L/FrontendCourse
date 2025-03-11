@@ -330,7 +330,7 @@
             
             
             <!-- Урок 2 -->
-        <div class="lesson active" id="lesson-2"><!-- Теория -->
+        <div class="lesson" id="lesson-2" style="display: none;">
             <div class="section">
                 <h2>Как работает интернет?</h2>
                 <p>
@@ -433,7 +433,7 @@
 
             
             
-            <div class="lesson active" id="lesson-3">
+            <div class="lesson" id="lesson-3">
                 <!-- Теория -->
                 <div class="section">
                     <h2>Что такое HTML?</h2>
@@ -580,7 +580,7 @@
             
             
             
-            <div class="lesson active" id="lesson-4">
+            <div class="lesson" id="lesson-4">
                 <!-- Теория -->
                 <div class="section">
                     <h2>Теория: Работа с текстом в HTML</h2>
@@ -745,7 +745,7 @@
                 </div>
             </div>
             
-            <div class="lesson active" id="lesson-5">
+            <div class="lesson" id="lesson-5">
                 <!-- Теория -->
                 <div class="section">
                     <h2>Теория: Списки в HTML</h2>
@@ -928,7 +928,7 @@
             </div>
             
             
-            <div class="lesson active" id="lesson-6">
+            <div class="lesson" id="lesson-6">
                 <!-- Теория -->
                 <div class="section">
                     <h2>Теория: Ссылки и изображения в HTML</h2>
@@ -1027,28 +1027,28 @@
                         <label><input type="radio" name="q1"> &lt;link&gt;</label>
                     </div>
                     <div class="quiz-question">
-                        <p>2. Какой атрибут указывает путь к изображению?</p>
-                        <label><input type="radio" name="q2"> alt</label>
-                        <label><input type="radio" name="q2" correct> src</label>
-                        <label><input type="radio" name="q2"> href</label>
+                        <p>2. Какой атрибут у тега &lt;audio&gt; позволяет отображать элементы управления?</p>
+                        <label><input type="radio" name="q2" correct> controls</label>
+                        <label><input type="radio" name="q2"> autoplay</label>
+                        <label><input type="radio" name="q2"> loop</label>
                     </div>
                     <div class="quiz-question">
-                        <p>3. Какой атрибут открывает ссылку в новой вкладке?</p>
-                        <label><input type="radio" name="q3"> title</label>
-                        <label><input type="radio" name="q3" correct> target="_blank"</label>
-                        <label><input type="radio" name="q3"> alt</label>
+                        <p>3. Какой тег используется для встраивания контента с других сайтов?</p>
+                        <label><input type="radio" name="q3" correct> &lt;iframe&gt;</label>
+                        <label><input type="radio" name="q3"> &lt;video&gt;</label>
+                        <label><input type="radio" name="q3"> &lt;audio&gt;</label>
                     </div>
                     <div class="quiz-question">
-                        <p>4. Какой тег используется для добавления изображения?</p>
-                        <label><input type="radio" name="q4"> &lt;a&gt;</label>
-                        <label><input type="radio" name="q4" correct> &lt;img&gt;</label>
-                        <label><input type="radio" name="q4"> &lt;picture&gt;</label>
+                        <p>4. Какой атрибут у тега &lt;video&gt; позволяет зацикливать видео?</p>
+                        <label><input type="radio" name="q4"> controls</label>
+                        <label><input type="radio" name="q4"> autoplay</label>
+                        <label><input type="radio" name="q4" correct> loop</label>
                     </div>
                     <div class="quiz-question">
-                        <p>5. Какой атрибут добавляет всплывающую подсказку к ссылке?</p>
-                        <label><input type="radio" name="q5"> alt</label>
-                        <label><input type="radio" name="q5" correct> title</label>
-                        <label><input type="radio" name="q5"> target</label>
+                        <p>5. Какой атрибут у тега &lt;iframe&gt; указывает источник контента?</p>
+                        <label><input type="radio" name="q5"> src</label>
+                        <label><input type="radio" name="q5" correct> src</label>
+                        <label><input type="radio" name="q5"> href</label>
                     </div>
                     <button onclick="checkQuiz(this)">Проверить ответы</button>
                 </div>
@@ -2237,14 +2237,21 @@ function nextLesson() {
             }
         }
 function showLesson(event, lessonNumber) {
-const navLinks = document.querySelectorAll('.nav-link');
-const lessons = document.querySelectorAll('.lesson');
+    const navLinks = document.querySelectorAll('.nav-link');
+    const lessons = document.querySelectorAll('.lesson');
 
-navLinks.forEach(link => link.classList.remove('active'));
-event.currentTarget.classList.add('active');
+    // Remove active class from all nav links and lessons
+    navLinks.forEach(link => link.classList.remove('active'));
+    lessons.forEach(lesson => {
+        lesson.classList.remove('active');
+        lesson.style.display = 'none';
+    });
 
-lessons.forEach(lesson => lesson.classList.remove('active'));
-document.getElementById(`lesson-${lessonNumber}`).classList.add('active');
+    // Add active class to clicked nav link and show corresponding lesson
+    event.currentTarget.classList.add('active');
+    const lesson = document.getElementById(`lesson-${lessonNumber}`);
+    lesson.classList.add('active');
+    lesson.style.display = 'block';
 }
 function checkQuiz(btn) {
     const quizSection = btn.closest('.section');
@@ -2301,28 +2308,17 @@ function runExample(btn) {
 
 // Запуск практики
 function runPractice(btn) {
-    // Находим текстовое поле с кодом
-    const textarea = btn.previousElementSibling;
-    if (!textarea || textarea.tagName !== 'TEXTAREA') {
-        console.error('Элемент <textarea> не найден.');
+    const practiceArea = btn.closest('.practice-area');
+    const textarea = practiceArea.querySelector('textarea');
+    const previewSection = practiceArea.querySelector('.preview-section');
+    
+    if (!textarea || !previewSection) {
+        console.error('Required elements not found');
         return;
     }
 
-    // Получаем код из текстового поля
     const code = textarea.value;
-
-    // Находим номер урока
-    const lessonNumber = btn.closest('.lesson').id.split('-')[1];
-
-    // Находим блок для предпросмотра
-    const preview = document.getElementById(`practice-preview-${lessonNumber}`);
-    if (!preview) {
-        console.error('Блок для предпросмотра не найден.');
-        return;
-    }
-
-    // Вставляем код в блок предпросмотра
-    preview.innerHTML = code;
+    previewSection.innerHTML = code;
 }
         // Переключение темы
         function toggleTheme() {
@@ -2339,6 +2335,23 @@ function runPractice(btn) {
         // Загрузка 
         window.onload = () => {
             initTheme();
+            
+            // Show first lesson by default
+            const firstNavLink = document.querySelector('.nav-link');
+            const firstLesson = document.getElementById('lesson-1');
+            
+            if (firstNavLink && firstLesson) {
+                firstNavLink.classList.add('active');
+                firstLesson.style.display = 'block';
+                firstLesson.classList.add('active');
+            }
+            
+            // Hide all other lessons
+            const lessons = document.querySelectorAll('.lesson:not(#lesson-1)');
+            lessons.forEach(lesson => {
+                lesson.style.display = 'none';
+                lesson.classList.remove('active');
+            });
         }
     </script>
 </body>
