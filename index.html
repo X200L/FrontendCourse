@@ -2210,15 +2210,1513 @@
                 </div>
             </div>
             
-            <script>
-                function runHtmlTagsExample() {
-                    const code = document.getElementById('html-tags-code').value;
-                    const previewSection = document.getElementById('html-tags-preview');
-                    previewSection.innerHTML = code;
+            <div class="lesson" id="lesson-14" style="display: none;">
+                <!-- Теория -->
+                <div class="section">
+                    <h2>Введение в CSS</h2>
+                    <p>
+                        CSS (Cascading Style Sheets) - это язык стилей, который используется для описания внешнего вида HTML-документа. CSS определяет, как элементы должны отображаться на экране, бумаге или других медиа.
+                    </p>
+            
+                    <h2>Способы подключения CSS</h2>
+                    <p>
+                        Существует три способа подключения CSS к HTML-документу:<br><br>
+                        
+                        1. <strong>Внешний CSS файл</strong> (рекомендуемый способ):
+                        <pre>
+            &lt;link rel="stylesheet" href="styles.css"&gt;
+                        </pre>
+            
+                        2. <strong>Внутренний CSS</strong> (в теге &lt;style&gt;):
+                        <pre>
+            &lt;style&gt;
+                body {
+                    background-color: #f0f0f0;
                 }
-            </script>
+            &lt;/style&gt;
+                        </pre>
+            
+                        3. <strong>Встроенный CSS</strong> (атрибут style):
+                        <pre>
+            &lt;p style="color: blue;"&gt;Синий текст&lt;/p&gt;
+                        </pre>
+                    </p>
+            
+                    <h2>Синтаксис CSS</h2>
+                    <p>
+                        CSS правило состоит из:<br>
+                        - Селектора (выбирает элементы для стилизации)<br>
+                        - Фигурных скобок { }<br>
+                        - Свойств и их значений<br>
+                        <pre>
+            селектор {
+                свойство: значение;
+                другое-свойство: значение;
+            }
+                        </pre>
+                    </p>
+                </div>
+            
+                <!-- Пример -->
+                <div class="section">
+                    <h2>Пример</h2>
+                    <div class="code-example">
+                        <pre>
+            &lt;!DOCTYPE html&gt;
+            &lt;html&gt;
+            &lt;head&gt;
+                &lt;style&gt;
+                    .text-red {
+                        color: red;
+                    }
+                    
+                    .text-blue {
+                        color: blue;
+                    }
+                    
+                    #special {
+                        font-weight: bold;
+                        font-size: 20px;
+                    }
+                &lt;/style&gt;
+            &lt;/head&gt;
+            &lt;body&gt;
+                &lt;p class="text-red"&gt;Красный текст&lt;/p&gt;
+                &lt;p class="text-blue"&gt;Синий текст&lt;/p&gt;
+                &lt;p id="special"&gt;Специальный текст&lt;/p&gt;
+            &lt;/body&gt;
+            &lt;/html&gt;
+                        </pre>
+                    </div>
+                    <button onclick="runExample(this)">Запустить пример</button>
+                    <div class="preview-section" id="example-preview-14"></div>
+                </div>
+            
+                <!-- Квиз -->
+                <div class="section">
+                    <h2>Квиз</h2>
+                    <div class="quiz-question">
+                        <p>1. Что такое CSS?</p>
+                        <label><input type="radio" name="q1"> Язык программирования</label>
+                        <label><input type="radio" name="q1" correct> Язык стилей</label>
+                        <label><input type="radio" name="q1"> Язык разметки</label>
+                    </div>
+                    <div class="quiz-question">
+                        <p>2. Какой селектор используется для выбора элемента по id?</p>
+                        <label><input type="radio" name="q2"> .</label>
+                        <label><input type="radio" name="q2" correct> #</label>
+                        <label><input type="radio" name="q2"> @</label>
+                    </div>
+                    <div class="quiz-question">
+                        <p>3. Какой способ подключения CSS является рекомендуемым?</p>
+                        <label><input type="radio" name="q3" correct> Внешний CSS файл</label>
+                        <label><input type="radio" name="q3"> Внутренний CSS</label>
+                        <label><input type="radio" name="q3"> Встроенный CSS</label>
+                    </div>
+                    <button onclick="checkQuiz(this)">Проверить ответы</button>
+                </div>
+            
+                <!-- Практика -->
+                <div class="section">
+                    <h2>Практика</h2>
+                    <div class="practice-area">
+                        <textarea placeholder="Создайте HTML с разными способами применения CSS..."></textarea>
+                        <button onclick="runPractice(this)">Запустить код</button>
+                        <div class="preview-section" id="practice-preview-14"></div>
+                    </div>
+                </div>
+            
+                <!-- Итог -->
+                <div class="section">
+                    <h2>Итог</h2>
+                    <p>
+                        * CSS - это язык стилей для оформления веб-страниц<br>
+                        * Существует три способа подключения CSS: внешний, внутренний и встроенный<br>
+                        * Основные селекторы: элемент, класс (.) и id (#)<br>
+                        * CSS правило состоит из селектора и набора свойств со значениями<br>
+                    </p>
+                </div>
+            </div>
+            
+            <div class="lesson" id="lesson-15" style="display: none;">
+                <div class="section">
+                    <h2>Цвета и фон в CSS</h2>
+                    <p>
+                        В CSS есть несколько способов задания цветов и множество свойств для работы с фоном.
+                    </p>
 
-                <button class="next-lesson-btn" onclick="nextLesson()">Следующий урок</button>
+                    <h2>Способы задания цветов</h2>
+                    <p>
+                        1. <strong>Ключевые слова</strong>:
+                        <pre>
+color: red;
+color: blue;
+color: green;</pre>
+
+                        2. <strong>HEX-код</strong>:
+                        <pre>
+color: #FF0000; /* красный */
+color: #0000FF; /* синий */
+color: #00FF00; /* зеленый */</pre>
+
+                        3. <strong>RGB/RGBA</strong>:
+                        <pre>
+color: rgb(255, 0, 0);    /* красный */
+color: rgba(0, 0, 255, 0.5); /* полупрозрачный синий */</pre>
+
+                        4. <strong>HSL/HSLA</strong>:
+                        <pre>
+color: hsl(0, 100%, 50%);     /* красный */
+color: hsla(240, 100%, 50%, 0.5); /* полупрозрачный синий */</pre>
+                    </p>
+
+                    <h2>Свойства фона</h2>
+                    <p>
+                        - background-color: задает цвет фона<br>
+                        - background-image: задает фоновое изображение<br>
+                        - background-repeat: определяет, как повторяется фоновое изображение<br>
+                        - background-position: позиция фонового изображения<br>
+                        - background-size: размер фонового изображения<br>
+                        
+                        <pre>
+.element {
+    background-color: #f0f0f0;
+    background-image: url('image.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}</pre>
+                    </p>
+                </div>
+
+                <!-- Пример -->
+                <div class="section">
+                    <h2>Пример</h2>
+                    <div class="code-example">
+                        <pre>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;style&gt;
+        .box {
+            width: 200px;
+            height: 200px;
+            margin: 20px;
+        }
+        
+        .color-box {
+            background-color: #ff0000;
+        }
+        
+        .gradient-box {
+            background: linear-gradient(45deg, #ff0000, #00ff00);
+        }
+        
+        .image-box {
+            background-image: url('https://via.placeholder.com/200');
+            background-size: cover;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class="box color-box"&gt;&lt;/div&gt;
+    &lt;div class="box gradient-box"&gt;&lt;/div&gt;
+    &lt;div class="box image-box"&gt;&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+                        </pre>
+                    </div>
+                    <button onclick="runExample(this)">Запустить пример</button>
+                    <div class="preview-section" id="example-preview-15"></div>
+                </div>
+
+                <!-- Квиз -->
+                <div class="section">
+                    <h2>Квиз</h2>
+                    <div class="quiz-question">
+                        <p>1. Какой формат цвета использует шестнадцатеричные значения?</p>
+                        <label><input type="radio" name="q1"> RGB</label>
+                        <label><input type="radio" name="q1" correct> HEX</label>
+                        <label><input type="radio" name="q1"> HSL</label>
+                    </div>
+                    <div class="quiz-question">
+                        <p>2. Какое свойство используется для установки фонового изображения?</p>
+                        <label><input type="radio" name="q2"> background</label>
+                        <label><input type="radio" name="q2" correct> background-image</label>
+                        <label><input type="radio" name="q2"> image</label>
+                    </div>
+                    <div class="quiz-question">
+                        <p>3. Какое значение background-size заполняет весь контейнер?</p>
+                        <label><input type="radio" name="q3"> contain</label>
+                        <label><input type="radio" name="q3" correct> cover</label>
+                        <label><input type="radio" name="q3"> auto</label>
+                    </div>
+                    <button onclick="checkQuiz(this)">Проверить ответы</button>
+                </div>
+
+                <!-- Практика -->
+                <div class="section">
+                    <h2>Практика</h2>
+                    <div class="practice-area">
+                        <textarea placeholder="Создайте элементы с разными типами фона..."></textarea>
+                        <button onclick="runPractice(this)">Запустить код</button>
+                        <div class="preview-section" id="practice-preview-15"></div>
+                    </div>
+                </div>
+
+                <!-- Итог -->
+                <div class="section">
+                    <h2>Итог</h2>
+                    <p>
+                        * Цвета в CSS можно задавать разными способами: ключевые слова, HEX, RGB/RGBA, HSL/HSLA<br>
+                        * Для работы с фоном используются свойства background-*<br>
+                        * Можно создавать градиенты и устанавливать фоновые изображения<br>
+                        * Фоновые изображения можно контролировать через position, size и repeat<br>
+                    </p>
+                </div>
+            </div>
+            
+            <div class="lesson" id="lesson-16" style="display: none;">
+                <div class="section">
+                    <h2>Текст и шрифты в CSS</h2>
+                    <p>
+                        CSS предоставляет множество свойств для стилизации текста и шрифтов.
+                    </p>
+            
+                    <h2>Основные свойства текста</h2>
+                    <p>
+                        <pre>
+            .text {
+                /* Шрифт */
+                font-family: Arial, sans-serif;  /* семейство шрифтов */
+                font-size: 16px;                /* размер шрифта */
+                font-weight: bold;              /* жирность */
+                font-style: italic;             /* стиль */
+                
+                /* Текст */
+                color: #333;                    /* цвет текста */
+                text-align: center;             /* выравнивание */
+                text-decoration: underline;     /* подчеркивание */
+                text-transform: uppercase;      /* преобразование */
+                line-height: 1.5;              /* высота строки */
+                letter-spacing: 2px;           /* межбуквенный интервал */
+                word-spacing: 4px;             /* интервал между словами */
+            }</pre>
+                    </p>
+            
+                    <h2>Google Fonts</h2>
+                    <p>
+                        Для использования нестандартных шрифтов можно подключить Google Fonts:
+                        <pre>
+            &lt;link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"&gt;
+            
+            .text {
+                font-family: 'Roboto', sans-serif;
+            }</pre>
+                    </p>
+                </div>
+            
+                <!-- Пример -->
+                <div class="section">
+                    <h2>Пример</h2>
+                    <div class="code-example">
+                        <pre>
+            &lt;!DOCTYPE html&gt;
+            &lt;html&gt;
+            &lt;head&gt;
+                &lt;link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"&gt;
+                &lt;style&gt;
+                    .text-styled {
+                        font-family: 'Roboto', sans-serif;
+                        font-size: 18px;
+                        line-height: 1.6;
+                        color: #333;
+                        margin: 20px;
+                    }
+                    
+                    .heading {
+                        font-weight: 700;
+                        text-transform: uppercase;
+                        letter-spacing: 2px;
+                        color: #2196F3;
+                    }
+                    
+                    .paragraph {
+                        text-align: justify;
+                        text-indent: 20px;
+                    }
+                &lt;/style&gt;
+            &lt;/head&gt;
+            &lt;body&gt;
+                &lt;h1 class="text-styled heading"&gt;Стилизованный заголовок&lt;/h1&gt;
+                &lt;p class="text-styled paragraph"&gt;Это пример стилизованного текста с использованием различных CSS-свойств для текста и шрифтов.&lt;/p&gt;
+            &lt;/body&gt;
+            &lt;/html&gt;</pre>
+                    </div>
+                    <button onclick="runExample(this)">Запустить пример</button>
+                    <div class="preview-section" id="example-preview-16"></div>
+                </div>
+            
+                <!-- Квиз -->
+                <div class="section">
+                    <h2>Квиз</h2>
+                    <div class="quiz-question">
+                        <p>1. Какое свойство используется для установки семейства шрифтов?</p>
+                        <label><input type="radio" name="q1"> font-style</label>
+                        <label><input type="radio" name="q1" correct> font-family</label>
+                        <label><input type="radio" name="q1"> font-type</label>
+                    </div>
+                    <div class="quiz-question">
+                        <p>2. Какое свойство изменяет расстояние между строками текста?</p>
+                        <label><input type="radio" name="q2"> text-spacing</label>
+                        <label><input type="radio" name="q2" correct> line-height</label>
+                        <label><input type="radio" name="q2"> row-height</label>
+                    </div>
+                    <div class="quiz-question">
+                        <p>3. Как сделать текст заглавными буквами через CSS?</p>
+                        <label><input type="radio" name="q3"> text-case: upper</label>
+                        <label><input type="radio" name="q3" correct> text-transform: uppercase</label>
+                        <label><input type="radio" name="q3"> font-case: upper</label>
+                    </div>
+                    <button onclick="checkQuiz(this)">Проверить ответы</button>
+                </div>
+            
+                <!-- Практика -->
+                <div class="section">
+                    <h2>Практика</h2>
+                    <div class="practice-area">
+                        <textarea placeholder="Создайте текст с разными стилями шрифтов..."></textarea>
+                        <button onclick="runPractice(this)">Запустить код</button>
+                        <div class="preview-section" id="practice-preview-16"></div>
+                    </div>
+                </div>
+            
+                <!-- Итог -->
+                <div class="section">
+                    <h2>Итог</h2>
+                    <p>
+                        * CSS предоставляет множество свойств для работы с текстом и шрифтами<br>
+                        * Можно настраивать размер, цвет, начертание и другие параметры текста<br>
+                        * Google Fonts позволяет использовать нестандартные шрифты<br>
+                        * Правильное форматирование текста улучшает читаемость и внешний вид сайта<br>
+                    </p>
+                </div>
+            </div>
+            
+            
+            <div class="lesson" id="lesson-17" style="display: none;">
+                <div class="section">
+                    <h2>Блочная модель CSS</h2>
+                    <p>
+                        Блочная модель (Box Model) - это фундаментальная концепция CSS, которая описывает, как элементы занимают пространство на странице.
+                    </p>
+
+                    <h2>Компоненты блочной модели</h2>
+                    <p>
+                        Блочная модель состоит из следующих компонентов (от внутреннего к внешнему):
+                        <ul>
+                            <li>Content (содержимое) - текст, изображения и т.д.</li>
+                            <li>Padding (внутренний отступ) - пространство между содержимым и границей</li>
+                            <li>Border (граница) - линия вокруг padding</li>
+                            <li>Margin (внешний отступ) - пространство между элементом и другими элементами</li>
+                        </ul>
+
+                        <pre>
+.box {
+    /* Размеры содержимого */
+    width: 200px;
+    height: 100px;
+    
+    /* Внутренние отступы */
+    padding: 20px;              /* все стороны */
+    padding-top: 10px;          /* верхний */
+    padding-right: 15px;        /* правый */
+    padding-bottom: 10px;       /* нижний */
+    padding-left: 15px;         /* левый */
+    
+    /* Границы */
+    border: 2px solid black;    /* все стороны */
+    border-width: 2px;
+    border-style: solid;
+    border-color: black;
+    
+    /* Внешние отступы */
+    margin: 10px;              /* все стороны */
+    margin-top: 5px;           /* верхний */
+    margin-right: 10px;        /* правый */
+    margin-bottom: 5px;        /* нижний */
+    margin-left: 10px;         /* левый */
+    
+    /* Управление расчётом размеров */
+    box-sizing: border-box;    /* включает padding и border в width/height */
+}</pre>
+                    </p>
+                </div>
+
+                <!-- Пример -->
+                <div class="section">
+                    <h2>Пример</h2>
+                    <div class="code-example">
+                        <pre>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;style&gt;
+        .box {
+            width: 200px;
+            height: 100px;
+            padding: 20px;
+            border: 5px solid #2196F3;
+            margin: 30px;
+            background-color: #E3F2FD;
+        }
+        
+        .box-content {
+            background-color: #BBDEFB;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .box-border-box {
+            box-sizing: border-box;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class="box"&gt;
+        &lt;div class="box-content"&gt;Content Box&lt;/div&gt;
+    &lt;/div&gt;
+    
+    &lt;div class="box box-border-box"&gt;
+        &lt;div class="box-content"&gt;Border Box&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+                    </div>
+                    <button onclick="runExample(this)">Запустить пример</button>
+                    <div class="preview-section" id="example-preview-17"></div>
+                </div>
+
+                <!-- Квиз -->
+                <div class="section">
+                    <h2>Квиз</h2>
+                    <div class="quiz-question">
+                        <p>1. Что включает в себя блочная модель CSS?</p>
+                        <label><input type="radio" name="q1"> Только content и padding</label>
+                        <label><input type="radio" name="q1" correct> Content, padding, border и margin</label>
+                        <label><input type="radio" name="q1"> Только width и height</label>
+                    </div>
+                    <div class="quiz-question">
+                        <p>2. Какое свойство включает padding и border в размеры элемента?</p>
+                        <label><input type="radio" name="q2"> box-model: inclusive</label>
+                        <label><input type="radio" name="q2" correct> box-sizing: border-box</label>
+                        <label><input type="radio" name="q2"> include-box: true</label>
+                    </div>
+                    <div class="quiz-question">
+                        <p>3. Что такое padding в CSS?</p>
+                        <label><input type="radio" name="q3"> Внешний отступ</label>
+                        <label><input type="radio" name="q3" correct> Внутренний отступ</label>
+                        <label><input type="radio" name="q3"> Граница элемента</label>
+                    </div>
+                    <button onclick="checkQuiz(this)">Проверить ответы</button>
+                </div>
+
+                <!-- Практика -->
+                <div class="section">
+                    <h2>Практика</h2>
+                    <div class="practice-area">
+                        <textarea placeholder="Создайте элемент с разными значениями margin, padding и border..."></textarea>
+                        <button onclick="runPractice(this)">Запустить код</button>
+                        <div class="preview-section" id="practice-preview-17"></div>
+                    </div>
+                </div>
+
+                <!-- Итог -->
+                <div class="section">
+                    <h2>Итог</h2>
+                    <p>
+                        * Блочная модель состоит из content, padding, border и margin<br>
+                        * box-sizing: border-box помогает управлять расчётом размеров<br>
+                        * Можно задавать отступы для каждой стороны отдельно<br>
+                        * Правильное использование блочной модели важно для вёрстки макетов<br>
+                    </p>
+                </div>
+            </div>
+            
+            <div class="lesson" id="lesson-18" style="display: none;">
+                <div class="section">
+                    <h2>Flexbox в CSS</h2>
+                    <p>
+                        Flexbox (Flexible Box Layout) - это модуль CSS, который предоставляет эффективный способ расположения, выравнивания и распределения пространства между элементами.
+                    </p>
+            
+                    <h2>Основные свойства Flexbox</h2>
+                    <p>
+                        <strong>Свойства контейнера (flex container):</strong>
+                        <pre>
+            .container {
+                display: flex;              /* включает flex-контекст */
+                
+                /* Направление */
+                flex-direction: row;        /* горизонтально (по умолчанию) */
+                flex-direction: column;     /* вертикально */
+                
+                /* Перенос элементов */
+                flex-wrap: nowrap;         /* без переноса */
+                flex-wrap: wrap;           /* с переносом */
+                
+                /* Выравнивание по главной оси */
+                justify-content: flex-start;    /* в начале */
+                justify-content: center;        /* по центру */
+                justify-content: flex-end;      /* в конце */
+                justify-content: space-between; /* равномерно */
+                
+                /* Выравнивание по поперечной оси */
+                align-items: stretch;      /* растягивание */
+                align-items: center;       /* по центру */
+                align-items: flex-start;   /* вверху */
+                align-items: flex-end;     /* внизу */
+                
+                /* Расстояние между элементами */
+                gap: 10px;                /* одинаковое */
+                gap: 10px 20px;           /* строки и колонки */
+            }</pre>
+            
+                        <strong>Свойства элементов (flex items):</strong>
+                        <pre>
+            .item {
+                /* Порядок элемента */
+                order: 0;                 /* по умолчанию */
+                
+                /* Растягивание */
+                flex-grow: 0;             /* не растягивается */
+                flex-grow: 1;             /* растягивается */
+                
+                /* Сжатие */
+                flex-shrink: 1;           /* сжимается */
+                flex-shrink: 0;           /* не сжимается */
+                
+                /* Базовый размер */
+                flex-basis: auto;         /* автоматически */
+                flex-basis: 200px;        /* фиксированный */
+                
+                /* Сокращённая запись */
+                flex: 1;                  /* grow: 1, shrink: 1, basis: 0% */
+            }</pre>
+                    </p>
+                </div>
+            
+                <!-- Пример -->
+                <div class="section">
+                    <h2>Пример</h2>
+                    <div class="code-example">
+                        <pre>
+            &lt;!DOCTYPE html&gt;
+            &lt;html&gt;
+            &lt;head&gt;
+                &lt;style&gt;
+                    .flex-container {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        gap: 20px;
+                        padding: 20px;
+                        background-color: #f0f0f0;
+                    }
+                    
+                    .flex-item {
+                        padding: 20px;
+                        background-color: #2196F3;
+                        color: white;
+                        text-align: center;
+                        flex: 1;
+                    }
+                    
+                    .fixed-item {
+                        flex: 0 0 100px;
+                        background-color: #4CAF50;
+                    }
+                &lt;/style&gt;
+            &lt;/head&gt;
+            &lt;body&gt;
+                &lt;div class="flex-container"&gt;
+                    &lt;div class="flex-item"&gt;Flex 1&lt;/div&gt;
+                    &lt;div class="flex-item fixed-item"&gt;Fixed&lt;/div&gt;
+                    &lt;div class="flex-item"&gt;Flex 3&lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/body&gt;
+            &lt;/html&gt;</pre>
+                    </div>
+                    <button onclick="runExample(this)">Запустить пример</button>
+                    <div class="preview-section" id="example-preview-18"></div>
+                </div>
+            
+                <!-- Квиз -->
+                <div class="section">
+                    <h2>Квиз</h2>
+                    <div class="quiz-question">
+                        <p>1. Какое свойство включает flex-контекст?</p>
+                        <label><input type="radio" name="q1"> flex</label>
+                        <label><input type="radio" name="q1" correct> display: flex</label>
+                        <label><input type="radio" name="q1"> flexbox</label>
+                    </div>
+                    <div class="quiz-question">
+                        <p>2. Какое свойство выравнивает элементы по главной оси?</p>
+                        <label><input type="radio" name="q2"> align-items</label>
+                        <label><input type="radio" name="q2" correct> justify-content</label>
+                        <label><input type="radio" name="q2"> align-content</label>
+                    </div>
+                    <div class="quiz-question">
+                        <p>3. Что делает свойство flex-grow: 1?</p>
+                        <label><input type="radio" name="q3"> Уменьшает элемент</label>
+                        <label><input type="radio" name="q3" correct> Позволяет элементу растягиваться</label>
+                        <label><input type="radio" name="q3"> Фиксирует размер элемента</label>
+                    </div>
+                    <button onclick="checkQuiz(this)">Проверить ответы</button>
+                </div>
+            
+                <!-- Практика -->
+                <div class="section">
+                    <h2>Практика</h2>
+                    <div class="practice-area">
+                        <textarea placeholder="Создайте flex-контейнер с тремя элементами..."></textarea>
+                        <button onclick="runPractice(this)">Запустить код</button>
+                        <div class="preview-section" id="practice-preview-18"></div>
+                    </div>
+                </div>
+            
+                <!-- Итог -->
+                <div class="section">
+                    <h2>Итог</h2>
+                    <p>
+                        * Flexbox - это мощный инструмент для создания гибких макетов<br>
+                        * Контейнер управляет расположением элементов через justify-content и align-items<br>
+                        * Элементы могут растягиваться и сжиматься с помощью flex-grow и flex-shrink<br>
+                        * Flexbox значительно упрощает создание отзывчивых макетов<br>
+                    </p>
+                </div>
+            </div>
+            
+            <div class="lesson" id="lesson-19" style="display: none;">
+                <div class="section">
+                    <h2>CSS Grid</h2>
+                    <p>
+                        CSS Grid Layout - это двумерная система компоновки, которая позволяет создавать сложные макеты веб-страниц с помощью строк и столбцов.
+                    </p>
+            
+                    <h2>Основные свойства Grid</h2>
+                    <p>
+                        <strong>Свойства контейнера (grid container):</strong>
+                        <pre>
+            .container {
+                display: grid;              /* включает grid-контекст */
+                
+                /* Определение колонок */
+                grid-template-columns: 200px 200px 200px;  /* фиксированные */
+                grid-template-columns: repeat(3, 1fr);     /* гибкие */
+                grid-template-columns: 1fr 2fr 1fr;        /* пропорциональные */
+                
+                /* Определение строк */
+                grid-template-rows: 100px auto 100px;      /* разные высоты */
+                
+                /* Отступы между ячейками */
+                gap: 20px;                /* одинаковые */
+                gap: 20px 10px;          /* строки и колонки */
+                
+                /* Выравнивание элементов */
+                justify-items: center;    /* по горизонтали */
+                align-items: center;      /* по вертикали */
+            }</pre>
+            
+                        <strong>Свойства элементов (grid items):</strong>
+                        <pre>
+            .item {
+                /* Размещение элемента */
+                grid-column: 1 / 3;        /* от 1 до 3 колонки */
+                grid-row: 1 / 3;          /* от 1 до 3 строки */
+                
+                /* Сокращенная запись */
+                grid-area: 1 / 1 / 3 / 3;  /* row-start/col-start/row-end/col-end */
+                
+                /* Выравнивание внутри ячейки */
+                justify-self: center;     /* по горизонтали */
+                align-self: center;       /* по вертикали */
+            }</pre>
+                    </p>
+                </div>
+            
+                <!-- Пример -->
+                <div class="section">
+                    <h2>Пример</h2>
+                    <div class="code-example">
+                        <pre>
+            &lt;!DOCTYPE html&gt;
+            &lt;html&gt;
+            &lt;head&gt;
+                &lt;style&gt;
+                    .grid-container {
+                        display: grid;
+                        grid-template-columns: repeat(3, 1fr);
+                        gap: 20px;
+                        padding: 20px;
+                        background-color: #f0f0f0;
+                    }
+                    
+                    .grid-item {
+                        padding: 20px;
+                        background-color: #2196F3;
+                        color: white;
+                        text-align: center;
+                    }
+                    
+                    .span-2 {
+                        grid-column: span 2;
+                        background-color: #4CAF50;
+                    }
+                    
+                    .span-3 {
+                        grid-column: 1 / -1;
+                        background-color: #FF5722;
+                    }
+                &lt;/style&gt;
+            &lt;/head&gt;
+            &lt;body&gt;
+                &lt;div class="grid-container"&gt;
+                    &lt;div class="grid-item"&gt;1&lt;/div&gt;
+                    &lt;div class="grid-item span-2"&gt;2&lt;/div&gt;
+                    &lt;div class="grid-item"&gt;3&lt;/div&gt;
+                    &lt;div class="grid-item"&gt;4&lt;/div&gt;
+                    &lt;div class="grid-item"&gt;5&lt;/div&gt;
+                    &lt;div class="grid-item span-3"&gt;6&lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/body&gt;
+            &lt;/html&gt;</pre>
+                    </div>
+                    <button onclick="runExample(this)">Запустить пример</button>
+                    <div class="preview-section" id="example-preview-19"></div>
+                </div>
+            
+                <!-- Квиз -->
+                <div class="section">
+                    <h2>Квиз</h2>
+                    <div class="quiz-question">
+                        <p>1. Какое свойство включает grid-контекст?</p>
+                        <label><input type="radio" name="q1"> grid</label>
+                        <label><input type="radio" name="q1" correct> display: grid</label>
+                        <label><input type="radio" name="q1"> grid-template</label>
+                    </div>
+                    <div class="quiz-question">
+                        <p>2. Что означает 1fr в grid-template-columns?</p>
+                        <label><input type="radio" name="q2"> Фиксированный размер</label>
+                        <label><input type="radio" name="q2" correct> Одна часть свободного пространства</label>
+                        <label><input type="radio" name="q2"> Один пиксель</label>
+                    </div>
+                    <div class="quiz-question">
+                        <p>3. Как растянуть элемент на две колонки?</p>
+                        <label><input type="radio" name="q3"> grid-span: 2</label>
+                        <label><input type="radio" name="q3" correct> grid-column: span 2</label>
+                        <label><input type="radio" name="q3"> column-span: 2</label>
+                    </div>
+                    <button onclick="checkQuiz(this)">Проверить ответы</button>
+                </div>
+            
+                <!-- Практика -->
+                <div class="section">
+                    <h2>Практика</h2>
+                    <div class="practice-area">
+                        <textarea placeholder="Создайте grid-контейнер с шестью элементами..."></textarea>
+                        <button onclick="runPractice(this)">Запустить код</button>
+                        <div class="preview-section" id="practice-preview-19"></div>
+                    </div>
+                </div>
+            
+                <!-- Итог -->
+                <div class="section">
+                    <h2>Итог</h2>
+                    <p>
+                        * CSS Grid - это мощный инструмент для создания двумерных макетов<br>
+                        * Grid позволяет точно контролировать размещение элементов в сетке<br>
+                        * Можно создавать сложные макеты с разными размерами ячеек<br>
+                        * Grid хорошо работает вместе с Flexbox для создания современных дизайнов<br>
+                    </p>
+                </div>
+            </div>
+            
+            <div class="lesson" id="lesson-20" style="display: none;">
+                <div class="section">
+                    <h2>Позиционирование в CSS</h2>
+                    <p>
+                        CSS предоставляет различные способы позиционирования элементов на странице. Правильное использование позиционирования позволяет создавать сложные макеты и интерфейсы.
+                    </p>
+            
+                    <h2>Типы позиционирования</h2>
+                    <p>
+                        <pre>
+            .element {
+                /* Статическое (по умолчанию) */
+                position: static;    /* обычный поток документа */
+                
+                /* Относительное */
+                position: relative;  /* смещение от обычной позиции */
+                top: 10px;
+                left: 20px;
+                
+                /* Абсолютное */
+                position: absolute;  /* относительно ближайшего позиционированного предка */
+                top: 0;
+                right: 0;
+                
+                /* Фиксированное */
+                position: fixed;     /* относительно viewport */
+                bottom: 20px;
+                right: 20px;
+                
+                /* Липкое */
+                position: sticky;    /* комбинация relative и fixed */
+                top: 0;
+                
+                /* Управление наложением */
+                z-index: 100;       /* порядок наложения элементов */
+            }</pre>
+                    </p>
+            
+                    <h2>Особенности позиционирования</h2>
+                    <p>
+                        * <strong>static</strong> - элемент следует нормальному потоку документа<br>
+                        * <strong>relative</strong> - элемент смещается относительно своей нормальной позиции<br>
+                        * <strong>absolute</strong> - элемент позиционируется относительно ближайшего позиционированного предка<br>
+                        * <strong>fixed</strong> - элемент фиксируется относительно окна браузера<br>
+                        * <strong>sticky</strong> - элемент ведет себя как relative, пока не достигнет определенной точки прокрутки<br>
+                    </p>
+                </div>
+            
+                <!-- Пример -->
+                <div class="section">
+                    <h2>Пример</h2>
+                    <div class="code-example">
+                        <pre>
+            &lt;!DOCTYPE html&gt;
+            &lt;html&gt;
+            &lt;head&gt;
+                &lt;style&gt;
+                    .container {
+                        position: relative;
+                        height: 300px;
+                        border: 2px solid #333;
+                        margin: 50px;
+                        padding: 20px;
+                    }
+                    
+                    .relative {
+                        position: relative;
+                        top: 20px;
+                        left: 20px;
+                        background: #2196F3;
+                        padding: 20px;
+                        color: white;
+                    }
+                    
+                    .absolute {
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        background: #4CAF50;
+                        padding: 20px;
+                        color: white;
+                    }
+                    
+                    .fixed {
+                        position: fixed;
+                        bottom: 20px;
+                        right: 20px;
+                        background: #FF5722;
+                        padding: 20px;
+                        color: white;
+                    }
+                    
+                    .sticky {
+                        position: sticky;
+                        top: 0;
+                        background: #9C27B0;
+                        padding: 20px;
+                        color: white;
+                    }
+                &lt;/style&gt;
+            &lt;/head&gt;
+            &lt;body&gt;
+                &lt;div class="container"&gt;
+                    &lt;div class="relative"&gt;Relative&lt;/div&gt;
+                    &lt;div class="absolute"&gt;Absolute&lt;/div&gt;
+                    &lt;div class="sticky"&gt;Sticky&lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class="fixed"&gt;Fixed&lt;/div&gt;
+            &lt;/body&gt;
+            &lt;/html&gt;</pre>
+                    </div>
+                    <button onclick="runExample(this)">Запустить пример</button>
+                    <div class="preview-section" id="example-preview-20"></div>
+                </div>
+            
+                <!-- Квиз -->
+                <div class="section">
+                    <h2>Квиз</h2>
+                    <div class="quiz-question">
+                        <p>1. Какое позиционирование используется по умолчанию?</p>
+                        <label><input type="radio" name="q1"> relative</label>
+                        <label><input type="radio" name="q1" correct> static</label>
+                        <label><input type="radio" name="q1"> absolute</label>
+                    </div>
+                    <div class="quiz-question">
+                        <p>2. Относительно чего позиционируется fixed элемент?</p>
+                        <label><input type="radio" name="q2"> Родительского элемента</label>
+                        <label><input type="radio" name="q2" correct> Окна браузера (viewport)</label>
+                        <label><input type="radio" name="q2"> Документа</label>
+                    </div>
+                    <div class="quiz-question">
+                        <p>3. Какое свойство управляет порядком наложения элементов?</p>
+                        <label><input type="radio" name="q3"> layer-order</label>
+                        <label><input type="radio" name="q3" correct> z-index</label>
+                        <label><input type="radio" name="q3"> stack-order</label>
+                    </div>
+                    <button onclick="checkQuiz(this)">Проверить ответы</button>
+                </div>
+            
+                <!-- Практика -->
+                <div class="section">
+                    <h2>Практика</h2>
+                    <div class="practice-area">
+                        <textarea placeholder="Создайте элементы с разными типами позиционирования..."></textarea>
+                        <button onclick="runPractice(this)">Запустить код</button>
+                        <div class="preview-section" id="practice-preview-20"></div>
+                    </div>
+                </div>
+            
+                <!-- Итог -->
+                <div class="section">
+                    <h2>Итог</h2>
+                    <p>
+                        * CSS предлагает пять типов позиционирования: static, relative, absolute, fixed и sticky<br>
+                        * Каждый тип позиционирования имеет свои особенности и применение<br>
+                        * z-index управляет порядком наложения позиционированных элементов<br>
+                        * Правильное использование позиционирования важно для создания сложных интерфейсов<br>
+                    </p>
+                </div>
+            </div>
+            
+            
+            
+            <div class="lesson" id="lesson-21" style="display: none;">
+                <div class="section">
+                    <h2>Адаптивный дизайн в CSS</h2>
+                    <p>
+                        Адаптивный дизайн позволяет создавать сайты, которые хорошо выглядят на любых устройствах: от мобильных телефонов до широкоформатных мониторов.
+                    </p>
+
+                    <h2>Основные инструменты адаптивного дизайна</h2>
+                    <p>
+                        <pre>
+/* Медиа-запросы */
+@media screen and (max-width: 768px) {
+    /* Стили для планшетов и мобильных */
+    .container {
+        width: 100%;
+        padding: 10px;
+    }
+}
+
+/* Гибкие изображения */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Относительные единицы измерения */
+.text {
+    font-size: 1.2em;     /* относительно родителя */
+    padding: 2rem;        /* относительно root */
+    width: 50vw;         /* относительно viewport */
+}
+
+/* Гибкая сетка */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+/* Контрольные точки */
+@media (min-width: 576px) { /* Смартфоны */ }
+@media (min-width: 768px) { /* Планшеты */ }
+@media (min-width: 992px) { /* Ноутбуки */ }
+@media (min-width: 1200px) { /* Десктопы */ }</pre>
+                    </p>
+                </div>
+
+                <!-- Пример -->
+                <div class="section">
+                    <h2>Пример</h2>
+                    <div class="code-example">
+                        <pre>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;style&gt;
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .card {
+            background: #f0f0f0;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        
+        .responsive-image {
+            max-width: 100%;
+            height: auto;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            
+            .card {
+                padding: 15px;
+            }
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class="container"&gt;
+        &lt;div class="card-grid"&gt;
+            &lt;div class="card"&gt;Карточка 1&lt;/div&gt;
+            &lt;div class="card"&gt;Карточка 2&lt;/div&gt;
+            &lt;div class="card"&gt;Карточка 3&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+                    </div>
+                    <button onclick="runExample(this)">Запустить пример</button>
+                    <div class="preview-section" id="example-preview-21"></div>
+                </div>
+
+                <!-- Квиз -->
+                <div class="section">
+                    <h2>Квиз</h2>
+                    <div class="quiz-question">
+                        <p>1. Что такое медиа-запросы в CSS?</p>
+                        <label><input type="radio" name="q1"> Запросы к базе данных</label>
+                        <label><input type="radio" name="q1" correct> Условные стили для разных устройств</label>
+                        <label><input type="radio" name="q1"> Запросы к серверу</label>
+                    </div>
+                    <div class="quiz-question">
+                        <p>2. Какая единица измерения относится к размеру viewport?</p>
+                        <label><input type="radio" name="q2"> px</label>
+                        <label><input type="radio" name="q2"> em</label>
+                        <label><input type="radio" name="q2" correct> vw</label>
+                    </div>
+                    <div class="quiz-question">
+                        <p>3. Для чего используется meta viewport?</p>
+                        <label><input type="radio" name="q3"> Для SEO оптимизации</label>
+                        <label><input type="radio" name="q3" correct> Для корректного масштабирования на мобильных устройствах</label>
+                        <label><input type="radio" name="q3"> Для установки заголовка страницы</label>
+                    </div>
+                    <button onclick="checkQuiz(this)">Проверить ответы</button>
+                </div>
+
+                <!-- Практика -->
+                <div class="section">
+                    <h2>Практика</h2>
+                    <div class="practice-area">
+                        <textarea placeholder="Создайте адаптивный макет с медиа-запросами..."></textarea>
+                        <button onclick="runPractice(this)">Запустить код</button>
+                        <div class="preview-section" id="practice-preview-21"></div>
+                    </div>
+                </div>
+
+                <!-- Итог -->
+                <div class="section">
+                    <h2>Итог</h2>
+                    <p>
+                        * Адаптивный дизайн необходим для корректного отображения на разных устройствах<br>
+                        * Медиа-запросы позволяют применять разные стили для разных размеров экрана<br>
+                        * Относительные единицы измерения помогают создавать гибкие макеты<br>
+                        * Мета-тег viewport важен для мобильных устройств<br>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="lesson" id="lesson-22" style="display: none;">
+        <div class="section">
+            <h2>Трансформации и анимации в CSS</h2>
+            <p>
+                CSS предоставляет мощные инструменты для создания анимаций и трансформаций элементов без использования JavaScript.
+            </p>
+    
+            <h2>Трансформации</h2>
+            <p>
+                <pre>
+    .element {
+        /* Базовые трансформации */
+        transform: translate(50px, 100px);    /* перемещение */
+        transform: rotate(45deg);             /* поворот */
+        transform: scale(1.5);                /* масштабирование */
+        transform: skew(10deg);               /* наклон */
+    
+        /* Комбинированные трансформации */
+        transform: rotate(45deg) scale(1.5);  /* поворот и масштабирование */
+        
+        /* 3D трансформации */
+        transform: rotateX(45deg);            /* поворот по оси X */
+        transform: rotateY(45deg);            /* поворот по оси Y */
+        transform: rotateZ(45deg);            /* поворот по оси Z */
+        
+        /* Точка трансформации */
+        transform-origin: center;             /* центр элемента */
+        transform-origin: top left;           /* верхний левый угол */
+    }</pre>
+            </p>
+    
+            <h2>Анимации</h2>
+            <p>
+                <pre>
+    /* Определение анимации */
+    @keyframes slide {
+        0% {
+            transform: translateX(0);
+        }
+        50% {
+            transform: translateX(100px);
+        }
+        100% {
+            transform: translateX(0);
+        }
+    }
+    
+    .animated-element {
+        /* Применение анимации */
+        animation-name: slide;              /* имя анимации */
+        animation-duration: 2s;             /* длительность */
+        animation-timing-function: ease;    /* функция времени */
+        animation-delay: 0s;                /* задержка */
+        animation-iteration-count: infinite; /* количество повторений */
+        animation-direction: alternate;      /* направление */
+        
+        /* Сокращенная запись */
+        animation: slide 2s ease infinite;
+        
+        /* Переходы */
+        transition: all 0.3s ease;          /* плавное изменение всех свойств */
+        transition: transform 0.3s ease;     /* плавное изменение transform */
+    }</pre>
+            </p>
+        </div>
+    
+        <!-- Пример -->
+        <div class="section">
+            <h2>Пример</h2>
+            <div class="code-example">
+                <pre>
+    &lt;!DOCTYPE html&gt;
+    &lt;html&gt;
+    &lt;head&gt;
+        &lt;style&gt;
+            .container {
+                display: flex;
+                gap: 20px;
+                padding: 20px;
+            }
+            
+            .box {
+                width: 100px;
+                height: 100px;
+                background: #2196F3;
+                margin: 10px;
+            }
+            
+            .rotate:hover {
+                transform: rotate(45deg);
+                transition: transform 0.3s ease;
+            }
+            
+            .scale:hover {
+                transform: scale(1.2);
+                transition: transform 0.3s ease;
+            }
+            
+            @keyframes bounce {
+                0%, 100% { transform: translateY(0); }
+                50% { transform: translateY(-20px); }
+            }
+            
+            .animate {
+                animation: bounce 1s ease infinite;
+            }
+        &lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;div class="container"&gt;
+            &lt;div class="box rotate"&gt;Наведи&lt;/div&gt;
+            &lt;div class="box scale"&gt;Наведи&lt;/div&gt;
+            &lt;div class="box animate"&gt;Анимация&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/body&gt;
+    &lt;/html&gt;</pre>
+            </div>
+            <button onclick="runExample(this)">Запустить пример</button>
+            <div class="preview-section" id="example-preview-22"></div>
+        </div>
+    
+        <!-- Квиз -->
+        <div class="section">
+            <h2>Квиз</h2>
+            <div class="quiz-question">
+                <p>1. Какое свойство используется для создания трансформаций?</p>
+                <label><input type="radio" name="q1"> animation</label>
+                <label><input type="radio" name="q1" correct> transform</label>
+                <label><input type="radio" name="q1"> transition</label>
+            </div>
+            <div class="quiz-question">
+                <p>2. Что определяет @keyframes в CSS?</p>
+                <label><input type="radio" name="q2"> Переходы</label>
+                <label><input type="radio" name="q2" correct> Анимации</label>
+                <label><input type="radio" name="q2"> Трансформации</label>
+            </div>
+            <div class="quiz-question">
+                <p>3. Какое свойство создает плавный переход между состояниями?</p>
+                <label><input type="radio" name="q3"> animation</label>
+                <label><input type="radio" name="q3" correct> transition</label>
+                <label><input type="radio" name="q3"> transform</label>
+            </div>
+            <button onclick="checkQuiz(this)">Проверить ответы</button>
+        </div>
+    
+        <!-- Практика -->
+        <div class="section">
+            <h2>Практика</h2>
+            <div class="practice-area">
+                <textarea placeholder="Создайте элемент с трансформацией и анимацией..."></textarea>
+                <button onclick="runPractice(this)">Запустить код</button>
+                <div class="preview-section" id="practice-preview-22"></div>
+            </div>
+        </div>
+    
+        <!-- Итог -->
+        <div class="section">
+            <h2>Итог</h2>
+            <p>
+                * CSS позволяет создавать сложные трансформации и анимации<br>
+                * Трансформации изменяют положение и форму элементов<br>
+                * Анимации создают плавные переходы между состояниями<br>
+                * Transitions делают изменения свойств плавными<br>
+            </p>
+        </div>
+    </div>
+    
+    
+    <div class="lesson" id="lesson-23" style="display: none;">
+        <div class="section">
+            <h2>Псевдоклассы и псевдоэлементы в CSS</h2>
+            <p>
+                Псевдоклассы и псевдоэлементы позволяют стилизовать элементы в определенных состояниях или добавлять новый контент без изменения HTML.
+            </p>
+    
+            <h2>Основные псевдоклассы</h2>
+            <p>
+                <pre>
+    /* Состояния элементов */
+    .link:hover { color: red; }              /* при наведении */
+    .link:active { color: darkred; }         /* при нажатии */
+    .link:focus { outline: 2px solid blue; } /* при фокусе */
+    .link:visited { color: purple; }         /* посещенные ссылки */
+    
+    /* Структурные псевдоклассы */
+    .item:first-child { font-weight: bold; }    /* первый элемент */
+    .item:last-child { margin-bottom: 0; }      /* последний элемент */
+    .item:nth-child(2n) { background: #f0f0f0; } /* четные элементы */
+    .item:nth-child(odd) { background: #fff; }   /* нечетные элементы */
+    
+    /* Состояния форм */
+    .input:disabled { background: #eee; }     /* отключенное поле */
+    .input:checked { border-color: green; }   /* отмеченный checkbox/radio */
+    .input:invalid { border-color: red; }     /* невалидное поле */</pre>
+            </p>
+    
+            <h2>Псевдоэлементы</h2>
+            <p>
+                <pre>
+    /* Добавление контента */
+    .text::before {
+        content: "→";              /* добавляет контент перед элементом */
+    }
+    
+    .text::after {
+        content: "←";              /* добавляет контент после элемента */
+    }
+    
+    /* Стилизация частей текста */
+    .text::first-letter {
+        font-size: 2em;            /* первая буква */
+        color: red;
+    }
+    
+    .text::first-line {
+        font-weight: bold;         /* первая строка */
+    }
+    
+    /* Выделение текста */
+    .text::selection {
+        background: yellow;        /* цвет выделения текста */
+        color: black;
+    }
+    
+    /* Placeholder в input */
+    .input::placeholder {
+        color: #999;              /* цвет placeholder */
+    }</pre>
+            </p>
+        </div>
+    
+        <!-- Пример -->
+        <div class="section">
+            <h2>Пример</h2>
+            <div class="code-example">
+                <pre>
+    &lt;!DOCTYPE html&gt;
+    &lt;html&gt;
+    &lt;head&gt;
+        &lt;style&gt;
+            .fancy-link {
+                color: #2196F3;
+                text-decoration: none;
+                position: relative;
+            }
+            
+            .fancy-link::after {
+                content: '';
+                position: absolute;
+                bottom: -2px;
+                left: 0;
+                width: 0;
+                height: 2px;
+                background: #2196F3;
+                transition: width 0.3s ease;
+            }
+            
+            .fancy-link:hover::after {
+                width: 100%;
+            }
+            
+            .list-item {
+                padding: 10px;
+                margin: 5px 0;
+            }
+            
+            .list-item:nth-child(odd) {
+                background: #f5f5f5;
+            }
+            
+            .quote::before {
+                content: '"';
+                font-size: 2em;
+                color: #2196F3;
+            }
+            
+            .quote::after {
+                content: '"';
+                font-size: 2em;
+                color: #2196F3;
+            }
+        &lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;a href="#" class="fancy-link"&gt;Наведи на меня&lt;/a&gt;
+        
+        &lt;div style="margin: 20px 0;"&gt;
+            &lt;div class="list-item"&gt;Элемент 1&lt;/div&gt;
+            &lt;div class="list-item"&gt;Элемент 2&lt;/div&gt;
+            &lt;div class="list-item"&gt;Элемент 3&lt;/div&gt;
+        &lt;/div&gt;
+        
+        &lt;p class="quote"&gt;Это цитата с красивыми кавычками&lt;/p&gt;
+    &lt;/body&gt;
+    &lt;/html&gt;</pre>
+            </div>
+            <button onclick="runExample(this)">Запустить пример</button>
+            <div class="preview-section" id="example-preview-23"></div>
+        </div>
+    
+        <!-- Квиз -->
+        <div class="section">
+            <h2>Квиз</h2>
+            <div class="quiz-question">
+                <p>1. Какой псевдокласс применяется при наведении мыши?</p>
+                <label><input type="radio" name="q1"> :active</label>
+                <label><input type="radio" name="q1" correct> :hover</label>
+                <label><input type="radio" name="q1"> :focus</label>
+            </div>
+            <div class="quiz-question">
+                <p>2. Сколько двоеточий используется в псевдоэлементах?</p>
+                <label><input type="radio" name="q2"> Одно (:)</label>
+                <label><input type="radio" name="q2" correct> Два (::)</label>
+                <label><input type="radio" name="q2"> Три (:::)</label>
+            </div>
+            <div class="quiz-question">
+                <p>3. Какой псевдоэлемент добавляет контент перед элементом?</p>
+                <label><input type="radio" name="q3"> ::after</label>
+                <label><input type="radio" name="q3" correct> ::before</label>
+                <label><input type="radio" name="q3"> ::first-letter</label>
+            </div>
+            <button onclick="checkQuiz(this)">Проверить ответы</button>
+        </div>
+    
+        <!-- Практика -->
+        <div class="section">
+            <h2>Практика</h2>
+            <div class="practice-area">
+                <textarea placeholder="Создайте элементы с использованием псевдоклассов и псевдоэлементов..."></textarea>
+                <button onclick="runPractice(this)">Запустить код</button>
+                <div class="preview-section" id="practice-preview-23"></div>
+            </div>
+        </div>
+    
+        <!-- Итог -->
+        <div class="section">
+            <h2>Итог</h2>
+            <p>
+                * Псевдоклассы позволяют стилизовать элементы в разных состояниях<br>
+                * Псевдоэлементы позволяют добавлять и стилизовать части элементов<br>
+                * Можно создавать сложные эффекты без JavaScript<br>
+                * Псевдоклассы и псевдоэлементы делают дизайн более интерактивным<br>
+            </p>
+        </div>
+    </div>
+
+
+    <script>
+        function runHtmlTagsExample() {
+            const code = document.getElementById('html-tags-code').value;
+            const previewSection = document.getElementById('html-tags-preview');
+            previewSection.innerHTML = code;
+        }
+    </script>
+
+    <button class="next-lesson-btn" onclick="nextLesson()">Следующий урок</button>
 <!-- Переключатель темы -->
 <button class="theme-toggle" onclick="toggleTheme()">🌓</button>
 </div>
@@ -2355,4 +3853,7 @@ function runPractice(btn) {
         }
     </script>
 </body>
+</html>
+</html>
+</html>
 </html>
